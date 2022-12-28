@@ -33,7 +33,7 @@ a {
 
 input {
     border: none;
-    border-bottom: .5px soild black;
+    border-bottom: solid 1px rgba(65, 65, 65, 0.686);
     padding: 10px;
 }
 

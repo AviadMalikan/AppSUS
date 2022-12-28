@@ -20,9 +20,8 @@
 @import './note-css/cmps/note-todos.css';
 @import './note-css/cmps/note-img.css';
 /* views */
-@import './apps/note/views/note-index.css';
+@import './note-css/views/note-index.css';
 
-@import './apps/mail/views/mail-index.css';
 @import './mail-css/cmps/mail-list.css';
 @import './mail-css/cmps/mail-preview.css';
 @import './mail-css/cmps/mail-filter.css';

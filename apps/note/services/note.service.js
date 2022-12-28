@@ -8,28 +8,76 @@ _createNotes()
 
 export const noteService = {
     query,
-//     get,
+    get,
+    getDefaultFilter,
+    // getEmptyNote,
 //     remove,
-//     save,
+    save
 }
 
 
-function query() {
+function query(filterBy = getDefaultFilter()) {
     return asyncStorageService.query(NOTE_KEY)
     .then((notes) => {
-        console.log('notes = ', notes)
+        if (filterBy.type) {
+            notes = notes.filter(note => note.type === filterBy.type)
+        }
+        if (filterBy.txt) {
+            const regex = new RegExp(filterBy.txt, 'i')
+            notes = notes.filter(note => regex.test(note.info.txt || note.info.lable || note.info.title))
+          }
+
         return notes
     })
 }
 
-function get(noteId) {
-    return storageService.get(NOTE_KEY, noteId)
+function getDefaultFilter() {
+    return {txt: '', type: ''}
 }
 
+function getEmptyTextNote(txt = '') {
+return {
+    type: "note-txt",
+    info: {
+        txt
+    }
+}
+}
 
+// function getEmptyImageNote(url = '', title = '') {
+//    return {
+//         type: "note-img",
+//         info: {
+//             url,
+//             title
+//         }
+//     }
+// }
 
+// function getEmptyTodosNote(lable = '', txt) {
+//     return {
+//         type: "note-todos",
+//         info: {
+//             lable, todos:
+//             [
+//                 { txt: "Driving liscence", doneAt: null },
+//                 { txt: "Coding power", doneAt: 187111111 }
+//             ]
+//         }
+//     }
+// }
 
+function get(noteId) {
+    return asyncStorageService.get(NOTE_KEY, noteId)
+}
 
+function save(note) {
+    if (note.id) {
+      return asyncStorageService.put(NOTE_KEY, note)
+    } else {
+      return asyncStorageService.post(NOTE_KEY, note)
+    }
+  }
 
 
     function _createNotes() {

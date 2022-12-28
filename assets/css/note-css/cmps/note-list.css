@@ -4,7 +4,8 @@
     column-gap: 20px;
     column-fill: auto;
     height: 60vh;
-background-color: var(--clr3);
+    background-color: var(--clr3);
+    padding: 10px;
 }
 
 .note {
