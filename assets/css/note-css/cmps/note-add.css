@@ -1,0 +1,41 @@
+.note-add {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-input {
+    position: relative;
+}
+
+.add-input input {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    width: 500px;
+}
+
+.type-btns {
+    position: absolute;
+    right: 450px;
+    left: 850px;
+    top: 2px;
+}
+
+.type-btns .btn {
+    margin-top: 5px;
+    margin-right: 3px;
+    background-color: transparent;
+    box-shadow: none;
+    opacity: .7;
+}
+
+.fa.txt-keep-btn::before {
+    content: "\f075";
+}
+
+.fa.img-keep-btn::before {
+    content: "\f03e";
+}
+
+.fa.todos-keep-btn::before {
+    content: "\f0ae";
+}
