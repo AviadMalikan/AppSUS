@@ -4,7 +4,7 @@ export function AppHeader() {
 
     return <header className="app-header">
         <Link to="/">
-            <h3>LOGO this is logo!</h3>
+            <h3>LOGO This is not logo </h3>
         </Link>
         <nav>
             <NavLink to="/">Home</NavLink>
