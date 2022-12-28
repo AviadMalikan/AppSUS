@@ -19,6 +19,8 @@
 @import './note-css/cmps/note-video.css';
 @import './note-css/cmps/note-todos.css';
 @import './note-css/cmps/note-img.css';
+@import './note-css/cmps/note-add.css';
+@import './note-css/cmps/note-filter.css';
 /* views */
 @import './note-css/views/note-index.css';
 

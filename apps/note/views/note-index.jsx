@@ -17,10 +17,22 @@ export function NoteIndex() {
         noteService.query(filterBy)
             .then(notesToDisplay => {
                 setNotes(notesToDisplay)
-                console.log('notes = ', notes)
             })
     }
 
+    function onRemoveNote(noteId) {
+        console.log('noteId = ', noteId)
+        noteService.remove(noteId)
+            .then(() => {
+                const updatedNotes = notes.filter(note => note.id !== noteId)
+                setNotes(updatedNotes)
+                // showSuccessMsg('Note Removed!')
+            })
+            .catch((err) => {
+                console.log('Had issues removing', err)
+                // showErrorMsg('Could not remove note, try again please!')
+            })
+    }
 
     function onSetFilter(filterBy) {
         setFilterBy(filterBy)
@@ -28,16 +40,16 @@ export function NoteIndex() {
 
     return <section className="note-index">
 
-        {!notes && <h1>Loading Notes...</h1>}
-        <NoteFilter onSetFilter={onSetFilter} />
-
-       <Link to="/note/add">Add Note</Link>
-
-        {notes && <NoteList notes={notes} />}
-
+       {/* <Link to="/note/add">Add Note</Link> */}
         <div className="nested-route">
             <Outlet />
         </div>
+        {!notes && <h1>Loading Notes...</h1>}
+        <NoteFilter onSetFilter={onSetFilter} />
+
+
+        {notes && <NoteList notes={notes} onRemoveNote={onRemoveNote}/>}
+
 
     </section>
 
