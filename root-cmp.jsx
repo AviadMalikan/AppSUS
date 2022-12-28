@@ -13,12 +13,14 @@ export function App() {
     return <Router>
         <section className="app">
             <AppHeader />
+            <section className="main-layout full">
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/mail" element={<MailIndex />} />
                 <Route path="/note" element={<NoteIndex />} />
             </Routes>
+            </section>
         </section>
     </Router>
 }

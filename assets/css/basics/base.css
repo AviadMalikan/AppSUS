@@ -6,8 +6,9 @@ html {}
 
 body {
     margin: 0;
-    background-color: lightblue;
-    padding: 0 20px;
+    background-color: var(--main-bg-color);
+    font-family: 'roboto';
+  
 }
 
 h1,
@@ -17,7 +18,7 @@ h4,
 h5,
 h6 {
     margin: .5em 0 .5em;
-    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-family: 'roboto';
 }
 
 p {
@@ -27,8 +28,33 @@ p {
 a {
     text-decoration: none;
     color: unset;
+    font-family: 'lato-light';
 }
 
+input {
+    border: none;
+    border-bottom: .5px soild black;
+    padding: 10px;
+}
+
+input:focus {
+    outline: 1px rgb(146, 146, 146);
+}
+
+
+button {
+    border-radius: 2px;
+    box-shadow: rgb(0 0 0 / 29%) 1px 0px 1px;
+    border: none;
+    font-size: .9em;
+    cursor: pointer;
+    padding: 5px;
+    transition: .5s;
+}
+
+button:hover {
+    box-shadow: rgb(0 0 0 / 29%) 0px 1px 2px inset;
+}
 
 
 /* Dont stretch my Media */
