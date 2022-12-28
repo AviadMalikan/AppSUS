@@ -1,25 +1,16 @@
-import { utilService } from '../../../services/util.service.js'
-
+import { MailPreview } from './mail-preview.jsx'
 
 export function MailList({ mails }) {
-
-    function getTime(timeStamp) {
-        return utilService.getDayName(timeStamp)
-    }
 
     return <section className="mails-container">
         <table>
             <tbody >
-                {
-                    mails.map(mail => {
-                        return <tr key={mail.id} className="mail-card">
-                            <td>⭐</td>
-                            <td> {mail.subject}</td>
-                            <td> {mail.body}</td>
-                            <td> at. {getTime(mail.sentAt)}</td>
-                        </tr>
-                    })
-                }
+                {mails.map(mail => {
+                    return <tr key={mail.id} className="mail-card flex">
+                        <MailPreview mail={mail}
+                        />
+                    </tr>
+                })}
             </tbody>
         </table>
     </section >

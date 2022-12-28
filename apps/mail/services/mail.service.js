@@ -45,8 +45,10 @@ function _createMails() {
             },
             {
                 id: 'e102',
-                subject: 'Miss you!',
-                body: 'Would love to catch up sometimes', isRead: false,
+                subject: 'Your Shopping Cart Is Waiting For You!',
+                body: ` The Biggest F’N Sale Is LIVE! Get 50% Off Everything In Your Order NOW!
+                Your Shopping Cart Is Waiting For You
+                CHECK OUT NOW`, isRead: false,
                 sentAt: 1551133930594,
                 to: 'momo@momo.com'
             },

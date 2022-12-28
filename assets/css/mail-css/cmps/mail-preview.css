@@ -1,0 +1,20 @@
+.mails-container table tr {
+    justify-content: space-between;
+    
+}
+
+.mails-container table td {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /* border: 1px solid var(--clr1); */
+}
+
+.mails-container table .content {
+    flex: 1
+}
+
+.mails-container table .title {
+    min-width: 315px
+}

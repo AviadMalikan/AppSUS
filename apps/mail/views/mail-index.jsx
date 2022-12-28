@@ -6,21 +6,27 @@ import { MailFilter } from "../cmps/mail-filter.jsx";
 
 export function MailIndex() {
     const [mails, setMails] = useState([])
+    const [filterBy, setFilterBy] = useState('')
 
     useEffect(() => {
         loadMails()
     }, [])
 
     function loadMails() {
-        mailService.query()
+        mailService.query(filterBy)
             .then(setMails)
     }
 
+    function onSetFilter(filterByFromFilter) {
+        // setFilterBy(filterByFromFilter)
+        console.log('hello from filter')
+
+    }
 
     return <section>
 
         <MailFilter />
-        <MailList mails={mails} />
+        <MailList mails={mails} onSetFilter={onSetFilter} />
 
     </section>
 }
