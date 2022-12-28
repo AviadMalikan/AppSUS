@@ -1,0 +1,19 @@
+.note-list {
+    margin-top: 50px;
+    columns: 200px 4;
+    column-gap: 20px;
+    column-fill: auto;
+    height: 60vh;
+background-color: var(--clr3);
+}
+
+.note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 9px 1px #d3d3d345;
+    background-color: rgb(254, 239, 218);
+    margin-bottom: 20px;
+    border-radius: 5px;
+    min-height: 100px;
+}

@@ -1,5 +1,13 @@
-export function NoteList() {
+import { DynamicCmp } from "./dynamic-cmp.jsx"
 
-    return <div>note list</div>
+export function NoteList({ notes }) {
 
+
+    return <section className="note-list">
+
+        {notes.map(note => <div className="note main-layout" key={note.id}>
+            <DynamicCmp type={note.type} note={note}/>
+        </div>
+        )}
+    </section>
 }
