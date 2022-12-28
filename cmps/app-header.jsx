@@ -2,7 +2,7 @@ const { Link, NavLink } = ReactRouterDOM
 const { useState } = React
 
 export function AppHeader() {
-    const [isNavOpen, setIsNavOpen] = useState(true)
+    const [isNavOpen, setIsNavOpen] = useState(false)
 
     function closeOrOpenNav() {
         setIsNavOpen(!isNavOpen)

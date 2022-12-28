@@ -1,0 +1,12 @@
+.mails-container {
+    border-radius: 2px;
+    background-color: var(--clr2);
+}
+
+.mails-container table {
+    margin: 0 auto;
+}
+
+.mails-container table td {
+    padding: 10px;
+}
