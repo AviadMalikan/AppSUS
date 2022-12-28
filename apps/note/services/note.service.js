@@ -53,6 +53,7 @@ function getEmptyNote(type) {
                 txt: ''
                 }
             }
+
         case 'note-img':
             return {
                 type: "note-img",
@@ -61,40 +62,17 @@ function getEmptyNote(type) {
                     title: ''
                 }
             }
+
+        case 'note-vid':
+            return {
+                type: "note-vid",
+                info: {
+                    url: '',
+                    title: ''
+                }
+            }
     }
 }
-
-// function getEmptyTextNote(txt = '') {
-// return {
-//     type: "note-txt",
-//     info: {
-//         txt
-//     }
-// }
-// }
-
-// function getEmptyImageNote(url = '', title = '') {
-//    return {
-//         type: "note-img",
-//         info: {
-//             url,
-//             title
-//         }
-//     }
-// }
-
-// function getEmptyTodosNote(lable = '', txt) {
-//     return {
-//         type: "note-todos",
-//         info: {
-//             lable, todos:
-//             [
-//                 { txt: "Driving liscence", doneAt: null },
-//                 { txt: "Coding power", doneAt: 187111111 }
-//             ]
-//         }
-//     }
-// }
 
 function get(noteId) {
     return asyncStorageService.get(NOTE_KEY, noteId)
@@ -141,6 +119,28 @@ function _createNotes() {
                 type: "note-img",
                 info: {
                     url: "../../assets/img/fiat.jpg",
+                    title: "Bobi and Me"
+                },
+                style: {
+                    backgroundColor: "#00d"
+                }
+            },
+            {
+                id: "n105",
+                type: "note-img",
+                info: {
+                    url: "https://www.datocms-assets.com/45470/1631110818-logo-react-js.png?fm=webp",
+                    title: "Over Reacting"
+                },
+                style: {
+                    backgroundColor: "#00d"
+                }
+            },
+            {
+                id: "n104",
+                type: "note-vid",
+                info: {
+                    url: "https://www.youtube.com/watch?v=M4ZoCHID9GI",
                     title: "Bobi and Me"
                 },
                 style: {

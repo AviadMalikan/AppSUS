@@ -1,9 +1,13 @@
+
+
 .note-list {
     margin-top: 20px;
-    columns: 200px 2;
-    column-gap: 20px;
+    columns: 200px auto;
+    column-gap: 30px;
     column-fill: auto;
-    height: 60vh;
+    /* height: 50vh; */
+    /* max-width: 60vw; */
+    width: 90vw;
     padding: 10px;
 }
 
@@ -17,6 +21,9 @@
     margin-bottom: 20px;
     border-radius: 5px;
     min-height: 100px;
+    min-width: 250px;
+    max-height: fit-content;
+    max-width: fit-content;
 }
 
 .note .remove-btn {

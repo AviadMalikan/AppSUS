@@ -38,12 +38,13 @@ export function NoteIndex() {
         setFilterBy(filterBy)
     }
 
-    return <section className="note-index">
+    return <section className="note-index main-layout">
 
        {/* <Link to="/note/add">Add Note</Link> */}
         <div className="nested-route">
             <Outlet />
         </div>
+
         {!notes && <h1>Loading Notes...</h1>}
         <NoteFilter onSetFilter={onSetFilter} />
 

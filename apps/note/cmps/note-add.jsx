@@ -43,7 +43,10 @@ export function NoteAdd() {
             setPlaceholder('Enter comma seperated text')
             setInputName('todos')
         }
-        if (type === 'note-vid') setPlaceholder('Enter video url')
+        if (type === 'note-vid') {
+            setPlaceholder('Enter video url')
+            setInputName('url')
+        }
     }
 
 
@@ -76,6 +79,7 @@ export function NoteAdd() {
                 <button onClick={() => setNoteType('note-txt')} className="add-note-btn btn fa txt-keep-btn"> </button>
                 <button onClick={() => setNoteType('note-img')} className="add-note-btn btn fa img-keep-btn"> </button>
                 <button onClick={() => setNoteType('note-todos')} className="add-note-btn btn fa todos-keep-btn"> </button>
+                <button onClick={() => setNoteType('note-vid')} className="add-note-btn btn fa vid-keep-btn"> </button>
             </section>
 
         </section>
