@@ -9,20 +9,19 @@ export function MailFilter({ onSetFilter }) {
 
     function handleChange({ target }) {
         let { value } = target
-        console.log('value: ', value)
-        onSetFilter(prevTitle => prevTitle = value)
+        onSetFilter(prevTitle => ({ ...prevTitle, txt: value }))
     }
 
 
     return <section className="filter-container">
 
         <form >
-            <label htmlFor="title">mail subject</label>
+            {/* <label htmlFor="title">Search: </label> */}
             <input type="text"
                 id="title"
                 name="txt"
-                placeholder="By Title"
-                value={filterByToEdit}
+                placeholder="Search in email"
+                value={filterByToEdit.txt}
                 onChange={handleChange}
             />
         </form>

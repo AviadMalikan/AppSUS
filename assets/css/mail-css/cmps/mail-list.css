@@ -1,11 +1,21 @@
 .mails-container {
     border-radius: 2px;
-    background-color: var(--clr2);
+    background-color: var(--clr1);
 }
 
 .mails-container table {
     margin: 0 auto;
     width: 100%;
     border-collapse: collapse;
+}
 
+.mails-container table tr {
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+
+}
+
+/* .mails-container table tr> :not(last-child) {} */
+.msg-read {
+    background-color: var(--clr2);
 }

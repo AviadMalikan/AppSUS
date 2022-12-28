@@ -3,7 +3,6 @@ import { LongTxt } from '../../../cmps/long-txt.jsx'
 import { utilService } from '../../../services/util.service.js'
 
 export function MailPreview({ mail }) {
-    console.log('mail: ', mail)
 
     function getTime(timeStamp) {
         return utilService.getDayName(timeStamp)
@@ -18,7 +17,8 @@ export function MailPreview({ mail }) {
 
     return <Fragment>
 
-        <td>⭐</td>
+        <td><span className="hover">⭐</span></td>
+        <td onclick={() => { }} className={`hover fa ${mail.isRead ? 'fa-seen' : 'fa-unseen'}`}></td>
         <td className="title"> {mail.subject}</td>
         <td className="content">
             <LongTxt txt={mail.body} length={getLength()} />

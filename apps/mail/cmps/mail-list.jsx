@@ -6,9 +6,9 @@ export function MailList({ mails }) {
         <table>
             <tbody >
                 {mails.map(mail => {
-                    return <tr key={mail.id} className="mail-card flex">
-                        <MailPreview mail={mail}
-                        />
+                    return <tr key={mail.id}
+                        className={`mail-card flex ${mail.isRead ? 'msg-read' : ''}`} >
+                        <MailPreview mail={mail} />
                     </tr>
                 })}
             </tbody>

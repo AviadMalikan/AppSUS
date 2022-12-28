@@ -34,6 +34,12 @@
     list-style-type: none;
 }
 
+
+/* Btn-hover */
+.hover:hover {
+    cursor: pointer;
+}
+
 /* Fonts Awesome */
 .fa.fa-hamburger::before {
     content: "\f0c9";
@@ -42,6 +48,7 @@
 .fa.fa-house::before {
     content: "\f015";
 }
+
 .fa.fa-about::before {
     content: "\f05a";
 }
@@ -53,4 +60,13 @@
 
 .fa.fa-notes::before {
     content: "\f249";
+}
+
+.fa.fa-seen::before {
+    content: "\f06e";
+    font-weight: bold;
+}
+
+.fa.fa-unseen::before {
+    content: "\f070";
 }
