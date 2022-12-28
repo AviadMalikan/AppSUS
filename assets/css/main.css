@@ -25,6 +25,7 @@
 @import './mail-css/cmps/mail-list.css';
 @import './mail-css/cmps/mail-preview.css';
 @import './mail-css/cmps/mail-filter.css';
+@import './mail-css/cmps/mail-compose.css';
 
 /* Cmps */
 @import './cmps/user-msg.css';

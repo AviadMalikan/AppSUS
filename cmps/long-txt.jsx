@@ -20,9 +20,9 @@ export function LongTxt({ txt, userLength }) {
     }
 
     return <Fragment>
-        <article onClick={onToggleLongTxt} className={isLongTxtShown ? '' : 'hover'}>
-            {getTxtToShow(isLongTxtShown, txt, length)}
-        </article>
+        {/* <article onClick={onToggleLongTxt} className={isLongTxtShown ? '' : 'hover'}> */}
+        {getTxtToShow(isLongTxtShown, txt, length)}
+        {/* </article> */}
         {/* {txt.length > length && <button onClick={onToggleLongTxt}>{isLongTxtShown ? 'Read Less' : 'Read More'}</button>} */}
     </Fragment>
 

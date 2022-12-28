@@ -63,10 +63,14 @@
 }
 
 .fa.fa-seen::before {
-    content: "\f06e";
+    content: "\f2b6";
     font-weight: bold;
 }
 
 .fa.fa-unseen::before {
-    content: "\f070";
+    content: "\f0e0";
+}
+
+.fa.fa-trash::before {
+    content: "\f2ed";
 }

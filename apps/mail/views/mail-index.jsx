@@ -3,11 +3,16 @@ const { useState, useEffect } = React
 import { mailService } from "../services/mail.service.js";
 import { MailList } from "../cmps/mail-list.jsx";
 import { MailFilter } from "../cmps/mail-filter.jsx";
+import { MailCompose } from "../cmps/mail-compose.jsx";
 
 export function MailIndex() {
     const [mails, setMails] = useState([])
     const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter)
+    const [isMsgCmp, setIsMsgCmp] = useState(false)
 
+    useEffect(() => {
+        loadMails(filterBy)
+    }, [])
 
     useEffect(() => {
         loadMails(filterBy)
@@ -16,6 +21,8 @@ export function MailIndex() {
     function loadMails() {
         mailService.query(filterBy)
             .then(mailsToUpload => {
+                console.log('mailsToUpload: ', mailsToUpload)
+
                 setMails(mailsToUpload)
             })
     }
@@ -24,10 +31,30 @@ export function MailIndex() {
         setFilterBy(filterByFromFilter)
     }
 
-    return <section>
+    function onRemoveMail(mailId) {
+        mailService.remove(mailId)
+            .then(() => {
+                const updateMails = mails.filter(mail => mail.id !== mailId)
+                setMails(updateMails)
+            })
+    }
+
+    function onIsMsgCmp() {
+        setIsMsgCmp(prevIsMsgCmp => setIsMsgCmp(!prevIsMsgCmp))
+    }
+
+
+    return <section className="main-content-container">
 
         <MailFilter onSetFilter={onSetFilter} />
-        <MailList mails={mails} />
+        <section>
+            
+            <button onClick={onIsMsgCmp}>New Mail</button>
+            {isMsgCmp && <MailCompose onIsMsgCmp={onIsMsgCmp} />}
+
+            <MailList mails={mails}
+                onRemoveMail={onRemoveMail} />
+        </section>
 
     </section>
 }

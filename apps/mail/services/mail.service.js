@@ -4,6 +4,10 @@ import { asyncStorageService } from '../../../services/async-storage.service.js'
 
 const MAIL_KEY = 'mailDB'
 _createMails()
+const loggedUser = {
+    email: 'user@appsus.com',
+    fullname: 'Mahatma Appsus'
+}
 
 export const mailService = {
     query,
@@ -11,6 +15,7 @@ export const mailService = {
     remove,
     save,
     getDefaultFilter,
+    getEmptyMail,
 }
 
 function query(filterBy = getDefaultFilter()) {
@@ -20,9 +25,9 @@ function query(filterBy = getDefaultFilter()) {
                 const regex = new RegExp(filterBy.txt, 'i')
                 mails = mails.filter(mail => regex.test(mail.body))
             }
-            // if (filterBy.isRead) {
-            //     mails = mails.filter(mail => mail.isRead)
-            // }
+            if (filterBy.email) {
+                mails = mails.filter(mail => mail.to !== loggedUser.email)
+            }
             return mails
         })
 }
@@ -36,15 +41,30 @@ function remove(mailId) {
 }
 
 function getDefaultFilter() {
-    return { txt: '', isRead: '' }
+    return {
+        txt: '', isRead: '',
+        to: loggedUser.email
+    }
 }
+
+function getEmptyMail() {
+    return {
+        subject: '', body: '', to: '',
+        sentAt: getCurrentTime(),
+    }
+}
+
 
 function save(mail) {
     if (mail.id) {
-        return asyncStorageService.put(MAIL_KEY, mails)
+        return asyncStorageService.put(MAIL_KEY, mail)
     } else {
-        return asyncStorageService.post(MAIL_KEY, mails)
+        return asyncStorageService.post(MAIL_KEY, mail)
     }
+}
+
+function getCurrentTime() {
+    return new Date()
 }
 
 function _createMails() {
@@ -57,7 +77,7 @@ function _createMails() {
                 body: 'Would love to catch up sometimes',
                 isRead: false,
                 sentAt: 1551133930594,
-                to: 'momo@momo.com'
+                to: 'user@appsus.com'
             },
             {
                 id: 'e102',
@@ -67,7 +87,7 @@ function _createMails() {
                 CHECK OUT NOW`,
                 isRead: false,
                 sentAt: 1551133930594,
-                to: 'momo@momo.com'
+                to: 'user@appsus.com'
             },
             {
                 id: 'e103',
@@ -75,30 +95,36 @@ function _createMails() {
                 body: `Thanks for signing up to The Movie Database (TMDB). Before we can continue, we need to validate your email address.`,
                 isRead: true,
                 sentAt: 1551133930594,
-                to: 'momo@momo.com'
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e104',
+                subject: 'Email verification required',
+                body: `Thanks for signing up to The Movie Database (TMDB). Before we can continue, we need to validate your email address.`,
+                isRead: false,
+                sentAt: 1551133930594,
+                to: 'user@appsus.com'
             },
         ]
     }
     utilService.saveToStorage(MAIL_KEY, mails)
 }
 
-const emails = [
-    {
-        id: 'e101',
-        subject: 'Miss you!',
-        body: 'Would love to catch up sometimes', isRead: false,
-        sentAt: 1551133930594,
-        to: 'momo@momo.com'
-    },
-    {
-        id: 'e101',
-        subject: 'Miss you!',
-        body: 'Would love to catch up sometimes', isRead: false,
-        sentAt: 1551133930594,
-        to: 'momo@momo.com'
-    },
-]
 
-const loggedUser = {
-    email: 'user@appsus.com', fullname: 'Mahatma Appsus'
-}
+// const emails = [
+//     {
+//         id: 'e101',
+//         subject: 'Miss you!',
+//         body: 'Would love to catch up sometimes', isRead: false,
+//         sentAt: 1551133930594,
+//         to: 'momo@momo.com'
+//     },
+//     {
+//         id: 'e101',
+//         subject: 'Miss you!',
+//         body: 'Would love to catch up sometimes', isRead: false,
+//         sentAt: 1551133930594,
+//         to: 'momo@momo.com'
+//     },
+// ]
+
