@@ -4,6 +4,8 @@ export function LongTxt({ txt, userLength = 100 }) {
     const [isLongTxtShown, setLongTxtShown] = useState(false)
 
     const length = userLength
+    console.log('length: ', length)
+
 
     function getTxtToShow(isLongTxtShown, txt, length) {
         return (txt.length < length || isLongTxtShown) ? txt : txt.substring(0, length + 1) + '...'

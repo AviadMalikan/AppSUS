@@ -1,7 +1,9 @@
 .mails-container {
     border-radius: 2px;
     background-color: var(--clr1);
+    width: 85%;
 }
+
 
 .mails-container table {
     margin: 0 auto;

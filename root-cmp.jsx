@@ -5,6 +5,7 @@ import { AppHeader } from "./cmps/app-header.jsx"
 import { About } from "./views/about.jsx"
 import { Home } from "./views/home.jsx"
 import { MailIndex } from "./apps/mail/views/mail-index.jsx"
+import { MailDetail } from "./apps/mail/views/mail-details.jsx"
 import { NoteIndex } from "./apps/note/views/note-index.jsx"
 import { NoteAdd } from "./apps/note/cmps/note-add.jsx"
 
@@ -15,15 +16,18 @@ export function App() {
         <section className="app">
             <AppHeader />
             <section className="main-layout full">
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/mail" element={<MailIndex />} />
-                <Route path="/note" element={<NoteIndex />}>
-                    <Route path="/note" element={<NoteAdd />} />
-                </Route>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
 
-            </Routes>
+                    <Route path="/mail" element={<MailIndex />} />
+                    <Route path="/mail/:mailId" element={<MailDetail />}/>
+
+                    <Route path="/note" element={<NoteIndex />}/>
+                        {/* <Route path="/note" element={<NoteAdd />} /> */}
+                    {/* </Route> */}
+
+                </Routes>
             </section>
         </section>
     </Router>

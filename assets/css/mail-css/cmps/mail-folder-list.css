@@ -1,0 +1,19 @@
+.mail-folders-containers {
+    width: 10%;
+    position: relative;
+    /* background-color: var(--clr2); */
+    transition: .4s ease-out;
+}
+
+.mail-folders-containers:hover {
+    width: 15%;
+    /* background-color: var(--clr2); */
+}
+
+.mail-folders-containers button {
+    padding: 10px;
+    margin: 5px 0px 0px 0px;
+    width: 80%;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}

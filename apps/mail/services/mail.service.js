@@ -31,6 +31,9 @@ function query(filterBy = getDefaultFilter()) {
             if (filterBy.to) {
                 mails = mails.filter(mail => mail.to === filterBy.to)
             }
+            if (filterBy.from) {
+                mails = mails.filter(mail => mail.from === filterBy.from)
+            }
             return mails
         })
 }
@@ -46,7 +49,8 @@ function remove(mailId) {
 function getDefaultFilter() {
     return {
         txt: '', isRead: '',
-        to: loggedUser.email
+        to: loggedUser.email,
+        from: '',
     }
 }
 
@@ -54,6 +58,7 @@ function getEmptyMail() {
     return {
         subject: '', body: '', to: '',
         sentAt: getCurrentTime(),
+        from: loggedUser.email,
     }
 }
 
@@ -80,6 +85,7 @@ function _createMails() {
                 body: 'Would love to catch up sometimes',
                 isRead: false,
                 sentAt: 1551133930594,
+                from: 'momo@momo.com',
                 to: 'user@appsus.com'
             },
             {
@@ -90,6 +96,7 @@ function _createMails() {
                 CHECK OUT NOW`,
                 isRead: false,
                 sentAt: 1551133930594,
+                from: 'momo@momo.com',
                 to: 'user@appsus.com'
             },
             {
@@ -98,6 +105,7 @@ function _createMails() {
                 body: `Thanks for signing up to The Movie Database (TMDB). Before we can continue, we need to validate your email address.`,
                 isRead: true,
                 sentAt: 1551133930594,
+                from: 'momo@momo.com',
                 to: 'user@appsus.com'
             },
             {
@@ -106,6 +114,7 @@ function _createMails() {
                 body: `Thanks for signing up to The Movie Database (TMDB). Before we can continue, we need to validate your email address.`,
                 isRead: false,
                 sentAt: 1551133930594,
+                from: 'momo@momo.com',
                 to: 'user@appsus.com'
             },
         ]

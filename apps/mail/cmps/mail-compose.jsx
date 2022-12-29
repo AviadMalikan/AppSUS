@@ -5,7 +5,7 @@ const { useNavigate, Fragment } = ReactRouterDOM
 import { mailService } from "../services/mail.service.js";
 
 
-export function MailCompose({ onIsMsgCmp }) {
+export function MailCompose({ onIsMsgCmp, onSubmitEmail }) {
     const [newEmail, setNewEmail] = useState(mailService.getEmptyMail)
     const navigate = useNavigate()
     useEffect(() => {
@@ -20,18 +20,13 @@ export function MailCompose({ onIsMsgCmp }) {
         })
     }
 
-    function onSubmitEmail(ev) {
-        ev.preventDefault()
-        mailService.save(newEmail)
-            .then(mail => {
-                console.log('mail: ', mail)
-                navigate('/mail')
-            })
-            .catch(console.log)
-    }
+
 
     return <section className="main-compose">
-        <form onSubmit={onSubmitEmail}>
+        <form onSubmit={(ev) => {
+            onIsMsgCmp()
+            onSubmitEmail(ev, newEmail)
+        }}>
             <div className="header-form">
                 <span>New Massage</span>
                 <span className="fa fa-open-window" onClick={onIsMsgCmp}></span>
