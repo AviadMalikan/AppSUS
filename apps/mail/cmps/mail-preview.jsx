@@ -30,7 +30,7 @@ export function MailPreview({ mail, onRemoveMail, onIsRead }) {
 
             <td><span className="hover">⭐</span></td>
             <td className="title hover" onClick={onTextShown}>
-                <LongTxt txt={mail.subject} userLength={30} />
+                <LongTxt txt={mail.subject} userLength={25} />
             </td>
 
             <td className="sub-title hover" onClick={onTextShown}>

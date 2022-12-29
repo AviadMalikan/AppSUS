@@ -1,5 +1,5 @@
 .mails-container table td {
-    padding: 10px;
+    padding: 5px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -12,7 +12,7 @@
 }
 
 .mails-container table .title {
-    min-width: 260px
+    min-width: 270px
 }
 
 .mails-container table .time {
@@ -20,9 +20,10 @@
 }
 
 .mail-card-open {
+    height: auto;
     background-color: var(--clr2);
     display: block;
-    padding: 20px 50px;
+    padding: 20px 40px;
 }
 
 .mail-card-open td .header {
@@ -37,5 +38,5 @@
 
 .mail-card-open h3 {
     width: 1000%;
-    ;
+    margin: 0;
 }
