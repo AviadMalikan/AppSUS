@@ -129,18 +129,44 @@ function _createNotes() {
                         { txt: "Coding power", doneAt: 187111111 }]
                 },
                 style: {
-                   
+                    backgroundColor: "#cbc0d3"
                 }
             },
             {
                 id: "n102",
                 type: "note-img",
                 info: {
-                    url: "../../assets/img/fiat.jpg",
-                    title: "Bobi and Me"
+                    url: "https://miro.medium.com/max/1400/1*wygpuRlFHFxNtihw9WQv7Q.png",
+                    title: "Life"
                 },
                 style: {
-                  
+                  backgroundColor: "#f4a261"
+                }
+            },
+            {
+                id: "n111",
+                type: "note-txt",
+                isPinned: true,
+                info: {
+                    txt: `“The rare people who do become truly exceptional at something do so not because they believe they're exceptional. On the contrary, they become amazing because they're obsessed with improvement. And that obsession with improvement stems from an unerring belief that they are, in fact, not that great at all.”
+                    ― Mark Manson. “The Subtle Art of Not Giving a F*ck“.`
+                },
+                style: {
+                backgroundColor: "#e76f51"
+                }
+            },
+            {
+                id: "n108",
+                type: "note-todos",
+                info: {
+                    lable: "DONT FORGET", todos: [
+                        { txt: "Visit Grandma", doneAt: null },
+                        { txt: "Shop groceries", doneAt: 187111111 },
+                        { txt: "Fold laundry", doneAt: 187111111 }]
+                },
+                style: {
+                    backgroundColor: "#2a9d8f"
+
                 }
             },
             {
@@ -154,17 +180,27 @@ function _createNotes() {
                
                 }
             },
-            // {
-            //     id: "n104",
-            //     type: "note-vid",
-            //     info: {
-            //         url: "https://www.youtube.com/watch?v=M4ZoCHID9GI",
-            //         title: "Bobi and Me"
-            //     },
-            //     style: {
-            //         backgroundColor: "#00d"
-            //     }
-            // }
+            {
+                id: "n110",
+                type: "note-txt",
+                info: {
+                    txt: "You code and you code and you code... and what you get? APPSUlutely nothing",
+                },
+                style: {
+               
+                }
+            },
+            {
+                id: "n104",
+                type: "note-vid",
+                info: {
+                    url: "https://www.youtube.com/watch?v=MPLUllINDSY",
+                    title: "Catch and Release"
+                },
+                style: {
+                    backgroundColor: "#fcbf49"
+                }
+            }
         ]
     }
 

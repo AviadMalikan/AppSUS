@@ -11,15 +11,12 @@ export function NoteIndex() {
     const [notes, setNotes] = useState(null)
 
     useEffect(() => {
-        console.log('hi effect');
         loadNotes()
     }, [filterBy])
 
     function loadNotes() {
-        console.log('loading');
         noteService.query(filterBy)
             .then(notesToDisplay => {
-                console.log('notes = ', notes)
                 setNotes(notesToDisplay)
             })
     }
@@ -47,7 +44,6 @@ export function NoteIndex() {
                 console.log('err = ', err)
                 // showErrorMsg('Cancled')
             })
-
     }
 
 
@@ -56,6 +52,18 @@ export function NoteIndex() {
         noteService.save(note).then((note) => {
             setNotes((prevNotes) => [...prevNotes, note])
         })
+    }
+
+
+    function onChangeNoteColor({ target }, note) {
+        let { value } = target
+        note.style.backgroundColor = value
+        noteService.save(note).then(() => {loadNotes()})
+    }
+
+    function onPinNote(note) {
+
+
     }
 
 
@@ -71,7 +79,7 @@ export function NoteIndex() {
         <NoteFilter onSetFilter={onSetFilter} />
 
 
-        {notes && <NoteList notes={notes} onRemoveNote={onRemoveNote} onDuplicateNote={onDuplicateNote} />}
+        {notes && <NoteList notes={notes} onRemoveNote={onRemoveNote} onDuplicateNote={onDuplicateNote} onPinNote={onPinNote} onChangeNoteColor={onChangeNoteColor} />}
 
 
     </section>

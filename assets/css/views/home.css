@@ -33,3 +33,27 @@
     height: 570px;
     width: 840px;
 }
+
+@media (max-width: 720px) {   
+    .home {
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 50px;
+    }
+
+    .home .apps {
+        flex-direction: row;
+        width: 500px;
+        margin-top: 90px;
+    }
+
+    .apps .app-link img {
+        width: 65px;
+    }
+
+    .home .main-logo-img {
+        height: 300px;
+        width: 500px;
+        transition: .5s;
+    }
+}

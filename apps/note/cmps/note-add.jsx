@@ -18,16 +18,16 @@ export function NoteAdd({ onSaveNote }) {
     function getPlaceholder() {
         const {type} = newNote
         if (type === 'note-txt') return 'Enter text' 
-        if (type === 'note-img') return 'Enter image url' 
-        if (type === 'note-vid') return 'Enter video url' 
-        if (type === 'note-todos') return 'eneter tototoddos' 
+       else if (type === 'note-img') return 'Enter image url' 
+       else if (type === 'note-vid') return 'Enter video url' 
+       else if (type === 'note-todos') return 'eneter tototoddos' 
     }
 
     function getInputName() {
         const {type} = newNote
         if (type === 'note-txt') return 'txt'
-        if (type === 'note-img' || type === 'note-vid') return 'url' 
-        if (type === 'note-todos') return 'todos' 
+       else if (type === 'note-img' || type === 'note-vid') return 'url' 
+       else if (type === 'note-todos') return 'todos' 
     }
 
     function handleChange({ target }) {
