@@ -16,6 +16,7 @@ export function MailPreview({ mail, onRemoveMail, onIsRead }) {
         let width = document.body.clientWidth
         let Divide = 30
         if (width > 1300) Divide = 10
+        else if (width > 900) Divide = 20
         return width / Divide
     }
 

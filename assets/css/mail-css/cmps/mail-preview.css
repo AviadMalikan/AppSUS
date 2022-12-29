@@ -20,8 +20,9 @@
 }
 
 .mail-card-open {
+    border-radius: 2px;
     height: auto;
-    background-color: var(--clr2);
+    background-color: var(--read-mail);
     display: block;
     padding: 20px 40px;
 }
