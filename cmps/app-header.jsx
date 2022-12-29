@@ -13,9 +13,9 @@ export function AppHeader() {
         <header className="app-header main-layout full">
 
             <Link to="/">
-                <h3>LOGO this is logo!</h3>
+            <img src="./assets/img/logoo.png" alt="logo" className="logo-img"/>
             </Link>
-            <button className="fa fa-hamburger" onClick={closeOrOpenNav}></button>
+            <button onClick={closeOrOpenNav}> <img src="./assets/img/menu.png" className="menu-img" alt="menu" /></button>
             {isNavOpen && <nav className="nav-menu" onClick={closeOrOpenNav}>
                 <NavLink to="/"> <img src="./assets/img/home.png" alt="home" /></NavLink>
                 <NavLink to="/about"> <img src="./assets/img/about.png" alt="about" /></NavLink>

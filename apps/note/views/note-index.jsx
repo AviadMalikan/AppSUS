@@ -11,10 +11,12 @@ export function NoteIndex() {
     const [notes, setNotes] = useState(null)
 
     useEffect(() => {
+        console.log('hi effect');
         loadNotes()
     }, [filterBy])
 
     function loadNotes() {
+        console.log('loading');
         noteService.query(filterBy)
             .then(notesToDisplay => {
                 console.log('notes = ', notes)
@@ -35,20 +37,41 @@ export function NoteIndex() {
             })
     }
 
- 
+    function onSaveNote(ev, newNote) {
+        ev.preventDefault()
+        noteService.save(newNote).then((note) => {
+            setNotes((prevNotes) => [...prevNotes, note])
+            // showSuccessMsg('Book saved!')
+        })
+            .catch((err) => {
+                console.log('err = ', err)
+                // showErrorMsg('Cancled')
+            })
+
+    }
+
+
+    function onDuplicateNote(note) {
+        note.id = ''
+        noteService.save(note).then((note) => {
+            setNotes((prevNotes) => [...prevNotes, note])
+        })
+    }
+
+
     function onSetFilter(filterBy) {
         setFilterBy(filterBy)
     }
 
-    return <section  className="note-index main-layout">
+    return <section className="note-index main-layout">
 
-        <NoteAdd notes={notes} setNotes={setNotes}/>
+        <NoteAdd notes={notes} onSaveNote={onSaveNote} />
 
         {!notes && <h1>Loading Notes...</h1>}
         <NoteFilter onSetFilter={onSetFilter} />
 
 
-        {notes && <NoteList notes={notes} onRemoveNote={onRemoveNote} loadNotes={loadNotes}/>}
+        {notes && <NoteList notes={notes} onRemoveNote={onRemoveNote} onDuplicateNote={onDuplicateNote} />}
 
 
     </section>

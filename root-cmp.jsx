@@ -15,15 +15,12 @@ export function App() {
         <section className="app">
             <AppHeader />
             <section className="main-layout full">
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/mail" element={<MailIndex />} />
-                <Route path="/note" element={<NoteIndex />}>
-                    <Route path="/note" element={<NoteAdd />} />
-                </Route>
-
-            </Routes>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/mail" element={<MailIndex />} />
+                    <Route path="/note" element={<NoteIndex />} />    
+                </Routes>
             </section>
         </section>
     </Router>
