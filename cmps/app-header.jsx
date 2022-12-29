@@ -13,7 +13,7 @@ export function AppHeader() {
         <header className="app-header main-layout full">
 
             <Link to="/">
-            <img src="./assets/img/logoo.png" alt="logo" className="logo-img"/>
+            <img src="./assets/img/logo.png" alt="logo" className="logo-img"/>
             </Link>
             <button onClick={closeOrOpenNav}> <img src="./assets/img/menu.png" className="menu-img" alt="menu" /></button>
             {isNavOpen && <nav className="nav-menu" onClick={closeOrOpenNav}>
