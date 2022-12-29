@@ -46,3 +46,11 @@
 .fa.vid-keep-btn::before {
     content: "\f03d";
 }
+
+@media (max-width: 720px) {
+.type-btns {
+    left: 370px;
+    right: 5px;
+}
+
+}

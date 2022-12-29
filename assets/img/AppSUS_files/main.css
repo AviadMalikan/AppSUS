@@ -1,0 +1,35 @@
+/* Setup */
+
+@import './setup/variables.css';
+@import './setup/typography.css';
+
+/* Basics */
+
+@import './basics/base.css';
+@import './basics/helpers.css';
+@import './basics/layout.css';
+
+/* Views */
+@import './views/home.css';
+
+/* NOTE APP */
+/* cmps */
+@import './note-css/cmps/note-list.css';
+@import './note-css/cmps/note-txt.css';
+@import './note-css/cmps/note-video.css';
+@import './note-css/cmps/note-todos.css';
+@import './note-css/cmps/note-img.css';
+@import './note-css/cmps/note-add.css';
+@import './note-css/cmps/note-filter.css';
+/* views */
+@import './note-css/views/note-index.css';
+
+@import './mail-css/cmps/mail-list.css';
+@import './mail-css/cmps/mail-preview.css';
+@import './mail-css/cmps/mail-filter.css';
+@import './mail-css/cmps/mail-compose.css';
+
+/* Cmps */
+@import './cmps/user-msg.css';
+@import './cmps/app-header.css';
+
