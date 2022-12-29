@@ -17,8 +17,6 @@ export function MailDetail() {
         loadMail()
     }, [])
 
-
-
     function loadMail() {
         mailService.get(params.mailId)
             .then(setMail)
@@ -38,7 +36,7 @@ export function MailDetail() {
     }
 
 
-    if (!mail) return <h1>Loading...</h1>
+    if (!mail) return <h1>Loading</h1>
         return <section>
             <button onClick={() => navigate("/mail")}>←</button>
             <h2>{mail.subject}</h2>
