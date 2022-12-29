@@ -45,22 +45,22 @@
     content: "\f0c9";
 }
 
-.fa.fa-house::before {
+/* .fa.fa-house::before {
     content: "\f015";
 }
 
 .fa.fa-about::before {
     content: "\f05a";
-}
+} */
 
-.fa.fa-mail::before {
+/* .fa.fa-mail::before {
     content: "\f0e0";
     /* content: "\f1a0"; */
-}
+/* }
 
 .fa.fa-notes::before {
     content: "\f249";
-}
+} */ 
 
 .fa.fa-seen::before {
     content: "\f2b6";

@@ -4,6 +4,7 @@ const { Outlet, Link, NavLink } = ReactRouterDOM
 import { noteService } from '../services/note.service.js';
 import { NoteList } from '../cmps/note-list.jsx';
 import { NoteFilter } from '../cmps/note-filter.jsx';
+import { NoteAdd } from '../cmps/note-add.jsx';
 
 export function NoteIndex() {
     const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
@@ -16,12 +17,12 @@ export function NoteIndex() {
     function loadNotes() {
         noteService.query(filterBy)
             .then(notesToDisplay => {
+                console.log('notes = ', notes)
                 setNotes(notesToDisplay)
             })
     }
 
     function onRemoveNote(noteId) {
-        console.log('noteId = ', noteId)
         noteService.remove(noteId)
             .then(() => {
                 const updatedNotes = notes.filter(note => note.id !== noteId)
@@ -34,22 +35,20 @@ export function NoteIndex() {
             })
     }
 
+ 
     function onSetFilter(filterBy) {
         setFilterBy(filterBy)
     }
 
-    return <section className="note-index main-layout">
+    return <section  className="note-index main-layout">
 
-       {/* <Link to="/note/add">Add Note</Link> */}
-        <div className="nested-route">
-            <Outlet />
-        </div>
+        <NoteAdd notes={notes} setNotes={setNotes}/>
 
         {!notes && <h1>Loading Notes...</h1>}
         <NoteFilter onSetFilter={onSetFilter} />
 
 
-        {notes && <NoteList notes={notes} onRemoveNote={onRemoveNote}/>}
+        {notes && <NoteList notes={notes} onRemoveNote={onRemoveNote} loadNotes={loadNotes}/>}
 
 
     </section>

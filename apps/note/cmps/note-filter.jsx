@@ -33,7 +33,7 @@ export function NoteFilter({ onSetFilter }) {
                 placeholder="Search by text"
                 onChange={handleChange} />
 
-            <select onChange={handleChange} name="type" id="rate">
+            <select className="filter-type-select" onChange={handleChange} name="type" id="type">
                 <option value="">All</option>
                 <option value="note-txt">Text</option>
                 <option value="note-img">Image</option>
