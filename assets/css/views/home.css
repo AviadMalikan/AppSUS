@@ -1,0 +1,35 @@
+.home {
+    display: flex;
+    justify-content: space-around;
+}
+
+.home .apps {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100px;
+}
+
+.apps .app-link img {
+    width: 50px;
+    transition: .5s;
+}
+
+.apps .app-link img:hover {
+    width: 60px;
+}
+
+.home .main-logo {
+    align-items: left;
+}
+
+.home .main-logo-img {
+    height: 550px;
+    width: 800px;
+    transition: .5s;
+}
+
+.home .main-logo-img:hover {
+    height: 570px;
+    width: 840px;
+}
