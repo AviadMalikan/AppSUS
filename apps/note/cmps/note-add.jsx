@@ -31,7 +31,6 @@ export function NoteAdd({ onSaveNote }) {
     }
 
     function handleChange({ target }) {
-        console.log('newNote = ', newNote)
         let { value, name: field } = target
         setNewNote((prevNote) => ({
             ...prevNote, info: {

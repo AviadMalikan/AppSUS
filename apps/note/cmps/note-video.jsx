@@ -1,5 +1,4 @@
 export function NoteVideo({ note }) {
-    console.log('note.info.txt = ', note.info.txt)
     let idx = note.info.url.indexOf('=')
     const urlCode = note.info.url.substring(idx+1)
     const newUrl = `https://www.youtube.com/embed/${urlCode}`
