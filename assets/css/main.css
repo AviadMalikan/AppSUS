@@ -24,6 +24,7 @@
 /* views */
 @import './note-css/views/note-index.css';
 
+@import './mail-css/cmps/mail-index.css';
 @import './mail-css/cmps/mail-list.css';
 @import './mail-css/cmps/mail-preview.css';
 @import './mail-css/cmps/mail-filter.css';

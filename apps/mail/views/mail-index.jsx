@@ -8,7 +8,7 @@ import { MailCompose } from "../cmps/mail-compose.jsx";
 export function MailIndex() {
     const [mails, setMails] = useState([])
     const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter)
-    const [isMsgCmp, setIsMsgCmp] = useState(false)
+    const [isComposeShow, setIsComposeShow] = useState(false)
 
     useEffect(() => {
         loadMails(filterBy)
@@ -21,8 +21,6 @@ export function MailIndex() {
     function loadMails() {
         mailService.query(filterBy)
             .then(mailsToUpload => {
-                console.log('mailsToUpload: ', mailsToUpload)
-
                 setMails(mailsToUpload)
             })
     }
@@ -39,23 +37,32 @@ export function MailIndex() {
             })
     }
 
+    function onIsRead(mailId) {
+        mailService.get(mailId)
+            .then(mail => {
+                mail.isRead = !mail.isRead
+                mailService.save(mail)
+            })
+    }
+
     function onIsMsgCmp() {
-        setIsMsgCmp(prevIsMsgCmp => setIsMsgCmp(!prevIsMsgCmp))
+        setIsComposeShow(prevIsMsgCmp => setIsComposeShow(!prevIsMsgCmp))
     }
 
 
-    return <section className="main-content-container">
+    return <section className="main-layout">
 
         <MailFilter onSetFilter={onSetFilter} />
-        <section>
-            
-            <button onClick={onIsMsgCmp}>New Mail</button>
-            {isMsgCmp && <MailCompose onIsMsgCmp={onIsMsgCmp} />}
+        <section className="main-content-container">
+
+            {!isComposeShow && <button onClick={onIsMsgCmp} className="fa fa-add new-mail-btn"></button>}
+            {isComposeShow && <MailCompose onIsMsgCmp={onIsMsgCmp} />}
 
             <MailList mails={mails}
-                onRemoveMail={onRemoveMail} />
+                onRemoveMail={onRemoveMail}
+                onIsRead={onIsRead} />
         </section>
 
-    </section>
+    </section >
 }
 

@@ -74,3 +74,11 @@
 .fa.fa-trash::before {
     content: "\f2ed";
 }
+
+.fa .fa-add::before {
+    content: "\2b";
+}
+
+.fa .fa-open-window::before {
+    content: "\f35d";
+}

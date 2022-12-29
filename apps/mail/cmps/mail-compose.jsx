@@ -34,6 +34,7 @@ export function MailCompose({ onIsMsgCmp }) {
         <form onSubmit={onSubmitEmail}>
             <div className="header-form">
                 <span>New Massage</span>
+                <span className="fa fa-open-window" onClick={onIsMsgCmp}></span>
                 <span className="hover" onClick={onIsMsgCmp}>X</span>
             </div>
 
@@ -59,10 +60,10 @@ export function MailCompose({ onIsMsgCmp }) {
             </article>
 
             <article className="text-area">
-                <input type="text"
+                <textarea type="text"
                     id="body"
                     name="body"
-                    placeholder="body"
+                    placeholder="Body"
                     value={newEmail.body}
                     onChange={handleEvent}
                 />

@@ -1,0 +1,10 @@
+.new-mail-btn {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    right: 15px;
+    bottom: 15px;
+    font-size: 1.5rem;
+    background-color: var(--clr5);
+}

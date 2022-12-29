@@ -6,7 +6,7 @@ const MAIL_KEY = 'mailDB'
 _createMails()
 const loggedUser = {
     email: 'user@appsus.com',
-    fullname: 'Mahatma Appsus'
+    fullName: 'Mahatma Appsus'
 }
 
 export const mailService = {
@@ -19,14 +19,17 @@ export const mailService = {
 }
 
 function query(filterBy = getDefaultFilter()) {
+
     return asyncStorageService.query(MAIL_KEY)
         .then((mails) => {
+            console.log('filterBy: ', filterBy)
+
             if (filterBy.txt) {
                 const regex = new RegExp(filterBy.txt, 'i')
                 mails = mails.filter(mail => regex.test(mail.body))
             }
-            if (filterBy.email) {
-                mails = mails.filter(mail => mail.to !== loggedUser.email)
+            if (filterBy.to) {
+                mails = mails.filter(mail => mail.to === filterBy.to)
             }
             return mails
         })
@@ -64,7 +67,7 @@ function save(mail) {
 }
 
 function getCurrentTime() {
-    return new Date()
+    return Date.now()
 }
 
 function _createMails() {
