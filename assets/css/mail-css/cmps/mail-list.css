@@ -2,6 +2,7 @@
     border-radius: 2px;
     background-color: var(--clr1);
     width: 85%;
+    font-family: 'roboto-thin';
 }
 
 
@@ -11,13 +12,20 @@
     border-collapse: collapse;
 }
 
+.title {
+    font-family: 'roboto';
+}
+
 .mails-container table tr {
+    height: 30px;
+    align-items: center;
+    padding: 10px 0px 10px 0px;
     justify-content: space-between;
-    border-bottom: 1px solid gray;
+    border-bottom: .3px solid #95959547;
 
 }
 
 /* .mails-container table tr> :not(last-child) {} */
 .msg-read {
-    background-color: var(--clr2);
+    background-color: var(--read-mail);
 }

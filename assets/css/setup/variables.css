@@ -1,7 +1,9 @@
 :root {
     --main-bg-color: #fffefe;
     --header-bg-color: #EDEDE9;
-    --clr1: #F5EBE0;
+    --read-mail: #f2f6fc;
+    --mail-txt: #202124;
+    --unread-mail-txt: #5f636f;
     --clr2: #D6CCC2;
     --clr3: #E3D5CA;
     --clr4: #D5BDAF;
