@@ -7,7 +7,7 @@
     width: 400px;
     height: 400px;
     background-color: var(--clr1);
-    border-radius: 3px;
+    border-radius: 5px;
     box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.15)
 }
 
@@ -21,6 +21,7 @@
 
 .main-compose article input {
     width: 100%;
+    border-bottom: .5px solid #c6c6c673;
     /* flex: 1; */
 }
 
@@ -42,11 +43,13 @@
 }
 
 .main-compose button {
-    width: 100%;
+    width: 100px;
     height: 50px;
     margin: 0;
     border: 0;
-    background-color: var(--clr2);
+    background-color: #0b57d0;
+    border-radius: 30px;
+    align-self: flex-end;
     box-shadow: rgba(0, 0, 0, 0) 1px 0px 1px;
 }
 
