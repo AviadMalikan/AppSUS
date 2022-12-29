@@ -1,7 +1,6 @@
 const { useState, useEffect } = React
 const { useNavigate, Fragment } = ReactRouterDOM
 
-
 import { mailService } from "../services/mail.service.js";
 
 
@@ -19,7 +18,6 @@ export function MailCompose({ onIsMsgCmp, onSubmitEmail }) {
             return { ...prevEmail, [field]: value }
         })
     }
-
 
 
     return <section className="main-compose">
@@ -65,7 +63,6 @@ export function MailCompose({ onIsMsgCmp, onSubmitEmail }) {
             </article>
             <button>Send!</button>
         </form>
-
 
     </section>
 }

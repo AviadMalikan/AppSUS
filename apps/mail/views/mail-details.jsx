@@ -31,7 +31,6 @@ export function MailDetail() {
         const timeFormat = date.getHours() + ":"
             + date.getMinutes() + ", "
             + date.toDateString();
-
         return timeFormat
     }
 

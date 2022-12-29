@@ -5,7 +5,6 @@
     overflow: hidden;
     justify-content: start;
     text-align: start;
-    /* border: 1px solid var(--clr1); */
 }
 
 .mails-container table .sub-title {
@@ -13,7 +12,7 @@
 }
 
 .mails-container table .title {
-    min-width: 315px
+    min-width: 260px
 }
 
 .mails-container table .time {

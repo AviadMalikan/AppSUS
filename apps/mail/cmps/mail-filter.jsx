@@ -1,8 +1,5 @@
 const { useState, useEffect } = React
 
-import { mailService } from "../services/mail.service.js";
-
-
 export function MailFilter({ onSetFilter }) {
     const [filterByToEdit, setFilterByToEdit] = useState('')
 
@@ -14,9 +11,7 @@ export function MailFilter({ onSetFilter }) {
 
 
     return <section className="filter-container">
-
         <form >
-            {/* <label htmlFor="title">Search: </label> */}
             <input type="text"
                 id="title"
                 name="txt"
@@ -25,6 +20,5 @@ export function MailFilter({ onSetFilter }) {
                 onChange={handleChange}
             />
         </form>
-
     </section>
 }

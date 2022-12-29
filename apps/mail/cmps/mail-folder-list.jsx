@@ -1,13 +1,6 @@
 
 
-
 export function MailFolderList({ onSetFilter }) {
-
-
-    function handleChange({ target }) {
-        let { value } = target
-        onSetFilter(prevTitle => ({ ...prevTitle, txt: value }))
-    }
 
     function onChangeFilter(val) {
         let valTo

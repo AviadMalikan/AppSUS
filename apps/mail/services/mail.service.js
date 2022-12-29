@@ -22,8 +22,6 @@ function query(filterBy = getDefaultFilter()) {
 
     return asyncStorageService.query(MAIL_KEY)
         .then((mails) => {
-            console.log('filterBy: ', filterBy)
-
             if (filterBy.txt) {
                 const regex = new RegExp(filterBy.txt, 'i')
                 mails = mails.filter(mail => regex.test(mail.body))
@@ -85,7 +83,7 @@ function _createMails() {
                 body: 'Would love to catch up sometimes',
                 isRead: false,
                 sentAt: 1551133930594,
-                from: 'momo@momo.com',
+                from: 'noga@momo.com',
                 to: 'user@appsus.com'
             },
             {
@@ -96,7 +94,7 @@ function _createMails() {
                 CHECK OUT NOW`,
                 isRead: false,
                 sentAt: 1551133930594,
-                from: 'momo@momo.com',
+                from: 'YaronBiton@Gmail.com',
                 to: 'user@appsus.com'
             },
             {
@@ -117,6 +115,79 @@ function _createMails() {
                 from: 'momo@momo.com',
                 to: 'user@appsus.com'
             },
+            {
+                id: 'e105',
+                subject: 'Great Proj!',
+                body: `Looking good very good, i would love to work with you i need that you develop for me a google food service site.`,
+                isRead: false,
+                sentAt: 1551133902024,
+                from: 'google.maneger@momo.com',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e106',
+                subject: `CHECK-IN FROM THE COMFORT OF YOUR HOME`,
+                body: `Thank you for your reservation. We appreciate that you have chosen Pytloun Boutique Hotel Prague**** for your stay in our beautiful city!`,
+                isRead: false,
+                sentAt: 1551133902024,
+                from: 'booking@booking.com',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e107',
+                subject: `IMPORTANT INFORMATION REGARDING YOUR FLIGHT`,
+                body: `Dear Customer,During your upcoming flight, we will provide you with an entertainment system with a variety of options via the Dream Stream App.`,
+                isRead: true,
+                sentAt: 1551133902024,
+                from: 'elal-serviceg@elal.com',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e108',
+                subject: `Update regarding seat change on your flight`,
+                body: `Dear Customer,
+                Due to aircraft change on your flight , your seat has been changed.
+                We apologize for the inconvenience.
+                We look forward to welcoming you aboard.	
+                EL AL Customer and Service Center.`,
+                isRead: true,
+                sentAt: 1551133902024,
+                from: 'elal-serviceg@elal.com',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e109',
+                subject: `Your Amazon.com order #233-1234567-1234567`,
+                body: `Hello Aviad,Thank you for shopping with us. We’ll send a confirmation when your item ships.
+                Details:
+                Order #113-9321815-0184219
+                Arriving:
+                January 16
+                We hope to see you again soon.`,
+                isRead: true,
+                sentAt: 1551133902024,
+                from: 'Amazon@amazon.com',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e110',
+                subject: `long time no see`,
+                body: `your eye test is ready call to get the result.`,
+                isRead: true,
+                sentAt: 1551133903030,
+                from: 'seemore@seemore.com',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e110',
+                subject: `long time no see`,
+                body: `your eye test is ready call to get the result.`,
+                isRead: true,
+                sentAt: 1551133903030,
+                from: 'seemore@seemore.com',
+                to: 'user@appsus.com'
+            },
+
         ]
     }
     utilService.saveToStorage(MAIL_KEY, mails)
