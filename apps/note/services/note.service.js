@@ -26,7 +26,6 @@ function query(filterBy = getDefaultFilter()) {
                 const regex = new RegExp(filterBy.txt, 'i')
                 notes = notes.filter(note => regex.test(note.info.txt || note.info.lable || note.info.title))
             }
-
             return notes
         })
 }
@@ -36,42 +35,54 @@ function getDefaultFilter() {
 }
 
 
+// function getEmptyNote(type) {
+//     switch (type) {
+//         case 'note-txt':
+//             return {
+//                 type: "note-txt",
+//                 info: {
+//                 txt: ''
+//                 },
+//                 style: {
+                
+//                 }
+//             }
+
+//         case 'note-img':
+//             return {
+//                 type: "note-img",
+//                 info: {
+//                     url: '',
+//                     title: ''
+//                 },
+//                 style: {
+                
+//                 }
+//             }
+
+//         case 'note-vid':
+//             return {
+//                 type: "note-vid",
+//                 info: {
+//                     url: '',
+//                     title: ''
+//                 },
+//                 style: {
+                
+//                 }
+//             }
+//     }
+// }
+
 function getEmptyNote(type) {
-    switch (type) {
-        case 'note-txt':
-            return {
-                type: "note-txt",
-                info: {
-                txt: ''
-                },
-                style: {
-                
-                }
-            }
-
-        case 'note-img':
-            return {
-                type: "note-img",
-                info: {
-                    url: '',
-                    title: ''
-                },
-                style: {
-                
-                }
-            }
-
-        case 'note-vid':
-            return {
-                type: "note-vid",
-                info: {
-                    url: '',
-                    title: ''
-                },
-                style: {
-                
-                }
-            }
+    return {
+        type,
+        info: {
+      
+        },
+        style: {
+            backgroundColor: ''
+        },
     }
 }
 

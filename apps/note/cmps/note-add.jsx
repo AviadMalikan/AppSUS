@@ -1,63 +1,37 @@
 import { noteService } from "../services/note.service.js"
 
 const { useState, useEffect } = React
-const { useNavigate, useParams, Link } = ReactRouterDOM
+// const { useNavigate, useParams, Link } = ReactRouterDOM
 
-export function NoteAdd({ setNotes, notes }) {
+export function NoteAdd({ onSaveNote }) {
     const [newNote, setNewNote] = useState(noteService.getEmptyNote('note-txt'))
-    const [dynPlaceholder, setPlaceholder] = useState('Enter text')
-    const [dynInputName, setInputName] = useState('txt')
-    const navigate = useNavigate()
+    const [newType, setType] = useState('note-txt')
 
-    useEffect(() => {
-        noteService.getEmptyNote(newNote.type)
-    }, [newNote])
-
-    function onSaveNote(ev) {
+    function setNoteType(ev, type) {
         ev.preventDefault()
-        console.log('notes before = ', notes)
-        noteService.save(newNote).then(() => {
-            // showSuccessMsg('Book saved!')
-        })
-            .catch((err) => {
-                console.log('err = ', err)
-                // showErrorMsg('Cancled')
-            })
-
-    }
-
-    function setNoteType(type) {
+        setType((prevType) => prevType = type)
         setNewNote((prevNote) => {
-            console.log('now');
-            return { ...prevNote, type: type }
+            return { ...prevNote, type: type}
         })
-
-        let placeholder = ''
-        let inputName = ''
-
-        if (type === 'note-txt') {
-            placeholder = 'Enter text'
-            inputName = 'txt'
-        }
-        if (type === 'note-img') {
-            placeholder = 'Enter img url'
-            inputName = 'url'
-        }
-        if (type === 'note-todos') {
-            placeholder = 'Enter comma seperated text'
-            inputName = 'todos'
-        }
-        if (type === 'note-vid') {
-            placeholder = 'Enter video url'
-            inputName = 'url'
-        }
-
-        setPlaceholder(placeholder)
-        setInputName(inputName)
     }
 
+    function getPlaceholder() {
+        const {type} = newNote
+        if (type === 'note-txt') return 'Enter text' 
+        if (type === 'note-img') return 'Enter image url' 
+        if (type === 'note-vid') return 'Enter video url' 
+        if (type === 'note-todos') return 'eneter tototoddos' 
+    }
+
+    function getInputName() {
+        const {type} = newNote
+        if (type === 'note-txt') return 'txt'
+        if (type === 'note-img' || type === 'note-vid') return 'url' 
+        if (type === 'note-todos') return 'todos' 
+    }
 
     function handleChange({ target }) {
+        console.log('newNote = ', newNote)
         let { value, name: field } = target
         setNewNote((prevNote) => ({
             ...prevNote, info: {
@@ -67,25 +41,27 @@ export function NoteAdd({ setNotes, notes }) {
     }
 
 
-
     return <div className="note-add">
         <section className="add-input">
-            <form onSubmit={onSaveNote}>
-                <input type="text"
-                    name={dynInputName}
+            <form onSubmit={() => onSaveNote(event, newNote)} className="form">
+                <input
+                    type="text"
                     id="txt"
-                    placeholder={dynPlaceholder}
+                    name={getInputName()}
+                    placeholder={getPlaceholder()}
                     value={newNote.txt}
                     onChange={handleChange}
                 />
+
+                <section className="type-btns">
+                    <button type="button" onClick={() => setNoteType(event, 'note-txt')} className="add-note-btn btn fa txt-keep-btn"> </button>
+                    <button type="button" onClick={() => setNoteType(event, 'note-img')} className="add-note-btn btn fa img-keep-btn"> </button>
+                    <button type="button" onClick={() => setNoteType(event, 'note-todos')} className="add-note-btn btn fa todos-keep-btn"> </button>
+                    <button type="button" onClick={() => setNoteType(event, 'note-vid')} className="add-note-btn btn fa vid-keep-btn"> </button>
+                </section>
+
             </form>
 
-            <section className="type-btns">
-                <button onClick={() => setNoteType('note-txt')} className="add-note-btn btn fa txt-keep-btn"> </button>
-                <button onClick={() => setNoteType('note-img')} className="add-note-btn btn fa img-keep-btn"> </button>
-                <button onClick={() => setNoteType('note-todos')} className="add-note-btn btn fa todos-keep-btn"> </button>
-                <button onClick={() => setNoteType('note-vid')} className="add-note-btn btn fa vid-keep-btn"> </button>
-            </section>
 
         </section>
 

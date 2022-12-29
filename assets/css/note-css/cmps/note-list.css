@@ -2,10 +2,9 @@
     margin-top: 20px;
     column-count: 3;
     column-gap: 30px;
-    /* height: 30vh; */
-    /* max-width: 60vw; */
     width: 90vw;
     padding: 10px;
+    justify-content: center;
 }
 
 .note {
@@ -24,9 +23,26 @@
     max-height: fit-content;
 }
 
+.note-edit-btns {
+    opacity: 0;
+    transition: .4s;
+}
+
+
+.note:hover .note-edit-btns {
+    opacity: 1;
+}
+
 .note .btn {
     background-color: transparent;
     box-shadow: none;
+    height: 23px;
+    width: 23px;
+    transition: .4s;
+}
+
+.note .btn:hover {
+    width: 28px;
 }
 
 .note .remove-btn {
