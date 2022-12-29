@@ -35,14 +35,6 @@ function getDefaultFilter() {
     return { txt: '', type: '' }
 }
 
-// function getEmptyNote(txt = '') {
-// return {
-//     type: "note-txt",
-//     info: {
-//         txt
-//     }
-// }
-// }
 
 function getEmptyNote(type) {
     switch (type) {
@@ -51,6 +43,9 @@ function getEmptyNote(type) {
                 type: "note-txt",
                 info: {
                 txt: ''
+                },
+                style: {
+                
                 }
             }
 
@@ -60,6 +55,9 @@ function getEmptyNote(type) {
                 info: {
                     url: '',
                     title: ''
+                },
+                style: {
+                
                 }
             }
 
@@ -69,6 +67,9 @@ function getEmptyNote(type) {
                 info: {
                     url: '',
                     title: ''
+                },
+                style: {
+                
                 }
             }
     }
@@ -103,6 +104,9 @@ function _createNotes() {
                 isPinned: true,
                 info: {
                     txt: "Fullstack Me Baby!"
+                },
+                style: {
+                
                 }
             },
             {
@@ -112,6 +116,9 @@ function _createNotes() {
                     lable: "Get my stuff together", todos: [
                         { txt: "Driving liscence", doneAt: null },
                         { txt: "Coding power", doneAt: 187111111 }]
+                },
+                style: {
+                   
                 }
             },
             {
@@ -122,7 +129,7 @@ function _createNotes() {
                     title: "Bobi and Me"
                 },
                 style: {
-                    backgroundColor: "#00d"
+                  
                 }
             },
             {
@@ -133,20 +140,20 @@ function _createNotes() {
                     title: "Over Reacting"
                 },
                 style: {
-                    backgroundColor: "#00d"
+               
                 }
             },
-            {
-                id: "n104",
-                type: "note-vid",
-                info: {
-                    url: "https://www.youtube.com/watch?v=M4ZoCHID9GI",
-                    title: "Bobi and Me"
-                },
-                style: {
-                    backgroundColor: "#00d"
-                }
-            }
+            // {
+            //     id: "n104",
+            //     type: "note-vid",
+            //     info: {
+            //         url: "https://www.youtube.com/watch?v=M4ZoCHID9GI",
+            //         title: "Bobi and Me"
+            //     },
+            //     style: {
+            //         backgroundColor: "#00d"
+            //     }
+            // }
         ]
     }
 

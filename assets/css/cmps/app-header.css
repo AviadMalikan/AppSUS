@@ -35,7 +35,7 @@ nav a:hover {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    top: 80px;
+    top: 62px;
     right: 20px;
     padding: 10px;
     z-index: 1;
@@ -43,7 +43,7 @@ nav a:hover {
     height: 200px;
     background-color: var(--header-bg-color);
     border-radius: 2px;
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.153);
+    box-shadow: 0px 2px 7px 3px rgb(0 0 0 / 15%);
 }
 
 @media (max-width: 720px) { 

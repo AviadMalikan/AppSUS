@@ -3,7 +3,7 @@ import { noteService } from "../services/note.service.js"
 const { useState, useEffect } = React
 const { useNavigate, useParams, Link } = ReactRouterDOM
 
-export function NoteAdd() {
+export function NoteAdd({ setNotes, notes }) {
     const [newNote, setNewNote] = useState(noteService.getEmptyNote('note-txt'))
     const [dynPlaceholder, setPlaceholder] = useState('Enter text')
     const [dynInputName, setInputName] = useState('txt')
@@ -15,14 +15,15 @@ export function NoteAdd() {
 
     function onSaveNote(ev) {
         ev.preventDefault()
+        console.log('notes before = ', notes)
         noteService.save(newNote).then(() => {
             // showSuccessMsg('Book saved!')
-            navigate('/note')
         })
             .catch((err) => {
                 console.log('err = ', err)
                 // showErrorMsg('Cancled')
             })
+
     }
 
     function setNoteType(type) {
@@ -31,22 +32,28 @@ export function NoteAdd() {
             return { ...prevNote, type: type }
         })
 
+        let placeholder = ''
+        let inputName = ''
+
         if (type === 'note-txt') {
-            setPlaceholder('Enter text')
-            setInputName('txt')
+            placeholder = 'Enter text'
+            inputName = 'txt'
         }
         if (type === 'note-img') {
-            setPlaceholder('Enter img url')
-            setInputName('url')
+            placeholder = 'Enter img url'
+            inputName = 'url'
         }
         if (type === 'note-todos') {
-            setPlaceholder('Enter comma seperated text')
-            setInputName('todos')
+            placeholder = 'Enter comma seperated text'
+            inputName = 'todos'
         }
         if (type === 'note-vid') {
-            setPlaceholder('Enter video url')
-            setInputName('url')
+            placeholder = 'Enter video url'
+            inputName = 'url'
         }
+
+        setPlaceholder(placeholder)
+        setInputName(inputName)
     }
 
 
@@ -62,10 +69,8 @@ export function NoteAdd() {
 
 
     return <div className="note-add">
-
         <section className="add-input">
             <form onSubmit={onSaveNote}>
-                {/* <label htmlFor="txt">Text:</label> */}
                 <input type="text"
                     name={dynInputName}
                     id="txt"
