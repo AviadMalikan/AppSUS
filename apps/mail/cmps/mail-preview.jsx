@@ -50,10 +50,11 @@ export function MailPreview({ mail, onRemoveMail, onIsRead }) {
             <td >
                 <span onClick={() => onRemoveMail(mail.id)} className="hover fa fa-trash"></span>
             </td>
+            
         </tr>}
 
         {isTextShown && <tr className="mail-card-open" >
-            <td>
+            <td className="header">
                 <div className="header">
                     <h2 onClick={onTextShown} className="hover"> {mail.subject}</h2>
                     <Link to={`/mail/${mail.id}`}>open</Link>

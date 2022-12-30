@@ -65,3 +65,15 @@
 .fa .fa-open-window::before {
     content: "\f35d";
 }
+
+.fa .fa-inbox::before {
+    content: "\f01c";
+}
+
+.fa .fa-send::before {
+    content: "\f1d8";
+}
+
+.fa .fa-favorite::before {
+    content: "\f005";
+}

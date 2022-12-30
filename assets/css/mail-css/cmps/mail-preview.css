@@ -11,26 +11,26 @@
     flex: 1
 }
 
-.mails-container table .title {
-    min-width: 270px
-}
 
 .mails-container table .time {
     font-size: 0.75rem;
 }
 
-.mail-card-open {
-    border-radius: 2px;
-    height: auto;
-    background-color: var(--read-mail);
-    display: block;
-    padding: 20px 40px;
-}
 
 .mail-card-open td .header {
     display: flex;
     width: 100%;
     justify-content: space-between;
+}
+
+.mail-card-open td {
+    
+    justify-content: start;
+}
+
+.mail-card-open .header {
+    display: flex;
+    width: 100%;
 }
 
 .mail-card-open h2 {
@@ -40,4 +40,25 @@
 .mail-card-open h3 {
     width: 1000%;
     margin: 0;
+}
+
+
+@media (min-width:940px) {
+
+
+    .mail-card-open td .header {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .mail-card-open td {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .mails-container table .title {
+        min-width: 270px
+    }
+
 }

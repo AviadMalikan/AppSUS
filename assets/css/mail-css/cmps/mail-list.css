@@ -1,13 +1,16 @@
 .mails-container {
     border-radius: 2px;
     background-color: var(--clr1);
-    width: 85%;
+    width: 100%;
+    flex: 7;
     font-family: 'roboto-thin';
     border-radius: 3px;
 }
 
 
 .mails-container table {
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
     width: 100%;
     border-collapse: collapse;
@@ -18,15 +21,50 @@
 }
 
 .mails-container table tr {
-    /* height: 30px; */
     align-items: center;
-    /* padding: 10px 0px 10px 0px; */
+    width: 100%;
     justify-content: space-between;
-    border-bottom: .3px solid #95959547;
-
+    border-bottom: .5px solid #95959547;
+    display: flex;
+    flex-direction: column;
 }
 
 /* .mails-container table tr> :not(last-child) {} */
 .msg-read {
     background-color: var(--read-mail);
+}
+
+.mails-container table .mail-card-open {
+    border-radius: 2px;
+    align-items: flex-start;
+    height: flex;
+    background-color: var(--read-mail);
+    display: block;
+    padding: 20px 40px;
+    flex-direction: column;
+}
+
+@media (min-width:940px) {
+
+    .mail-container {
+        flex: 7;
+        width: 85%;
+    }
+
+    .mails-container table {
+        margin: 0 auto;
+        width: 100%;
+        border-collapse: collapse;
+        flex-direction: row;
+    }
+
+    .mails-container table tr {
+        flex-direction: row;
+
+    }
+
+    .mails-container table .mail-card-open {
+        flex-direction: column;
+        width: 100%;
+    }
 }

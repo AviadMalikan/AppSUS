@@ -26,10 +26,14 @@ export function MailFolderList({ onSetFilter }) {
 
     return <section className="mail-folders-containers">
 
-        <button onClick={() => onChangeFilter('inbox')}>Inbox</button>
-        <button onClick={() => onChangeFilter('all')}>All</button>
-        <button onClick={() => onChangeFilter('sent')}>Sent</button>
-        <button onClick={() => onChangeFilter('favorite')}>Favorite</button>
+        <button onClick={() => onChangeFilter('inbox')}
+            className="fa fa-inbox"></button>
+        <button onClick={() => onChangeFilter('all')}
+            className="">All</button>
+        <button onClick={() => onChangeFilter('sent')}
+            className="fa fa-send"></button>
+        <button onClick={() => onChangeFilter('favorite')}
+            className="fa fa-favorite">⭐</button>
 
     </section>
 }

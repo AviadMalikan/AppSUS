@@ -6,13 +6,25 @@
     right: 50px;
     bottom: 50px;
     font-size: 1.5rem;
-    background-color: #eeba0b;
+    background-color: var(--main-yellow);
+    transition: bottom .3s ease-in-out;
 }
-.new-mail-btn:hover{
+
+.new-mail-btn:hover {
     bottom: 65px;
 }
 
 
-.main-content-container{
-margin-bottom: 40px;
+.main-content-container {
+    margin-bottom: 40px;
+    flex-direction: column;
+}
+
+
+@media (min-width:940px) {
+
+    .main-content-container {
+        margin-bottom: 40px;
+        flex-direction: row;
+    }
 }
