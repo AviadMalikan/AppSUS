@@ -5,6 +5,8 @@ import { noteService } from '../services/note.service.js';
 import { NoteList } from '../cmps/note-list.jsx';
 import { NoteFilter } from '../cmps/note-filter.jsx';
 import { NoteAdd } from '../cmps/note-add.jsx';
+import { showSuccessMsg, showErrorMsg } from "../../../services/event-bus.service.js"
+
 
 export function NoteIndex() {
     const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
@@ -26,16 +28,18 @@ export function NoteIndex() {
             .then(() => {
                 const updatedNotes = notes.filter(note => note.id !== noteId)
                 setNotes(updatedNotes)
-                // showSuccessMsg('Note Removed!')
+                showSuccessMsg('Note Removed!')
             })
             .catch((err) => {
                 console.log('Had issues removing', err)
-                // showErrorMsg('Could not remove note, try again please!')
+                showErrorMsg('Could not remove note, try again please!')
             })
     }
 
     function onSaveNote(ev, newNote) {
         ev.preventDefault()
+        console.log('newNote = ', newNote)
+        return
         noteService.save(newNote).then((note) => {
             setNotes((prevNotes) => [...prevNotes, note])
             // showSuccessMsg('Book saved!')
@@ -44,7 +48,7 @@ export function NoteIndex() {
                 console.log('err = ', err)
                 // showErrorMsg('Cancled')
             })
-    }
+}
 
 
     function onDuplicateNote(note) {

@@ -13,7 +13,7 @@
     box-shadow: 0px 3px 5px 1px rgb(127 127 127 / 40%);
     border-radius: 8px;
     width: 500px;
-    /* z-index: 3; */
+   
     background-color: transparent;
 }
 
@@ -54,9 +54,26 @@
 }
 
 @media (max-width: 720px) {
-.type-btns {
-    left: 370px;
-    right: 5px;
-}
+    .add-input {
+        justify-content: start;
+
+    }
+
+    .add-input input {
+        width: 330px;
+    }
+
+    .note-add {
+        width: 100%;
+    }
+
+    .type-btns {
+        /* left: 370px; */
+        right: 5px;
+    }
+
+    .form {
+        display: flex;
+    }
 
 }

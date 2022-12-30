@@ -115,11 +115,8 @@
         flex-direction: column;
         justify-content: center;
         margin: 0 auto;
-        width: 100vw;
-    }
-
-    .note {
-        min-width: 100vw;
+        width: 80vw;
+        margin-left: 25px;
     }
 
 }

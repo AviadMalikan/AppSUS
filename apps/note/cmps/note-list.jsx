@@ -1,6 +1,5 @@
 import { DynamicCmp } from "./dynamic-cmp.jsx"
-import { noteService } from '../services/note.service.js';
-import { utilService } from "../../../services/util.service.js";
+
 
 export function NoteList({ notes, onRemoveNote, onDuplicateNote, onPinNote, onChangeNoteColor }) {
 
@@ -32,6 +31,7 @@ export function NoteList({ notes, onRemoveNote, onDuplicateNote, onPinNote, onCh
             </section>
         </div>
         )}
+        <hr />
 
         {notes.map(note => !note.isPinned && <div style={{ backgroundColor: note.style.backgroundColor }} className="note" key={note.id}>
 

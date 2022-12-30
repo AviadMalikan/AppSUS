@@ -18,3 +18,13 @@
     border: none;
     border-bottom: solid 1px rgba(65, 65, 65, 0.686);
 }
+
+@media (max-width: 720px) {
+    .note-filter {
+        width: auto;
+    }
+
+    .filter-type-select {
+        align-self: stretch;
+    }
+}
