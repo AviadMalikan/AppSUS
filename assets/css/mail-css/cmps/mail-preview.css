@@ -11,11 +11,26 @@
     flex: 1
 }
 
+.mails-container table tr .mail-card div.utils-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mails-container table tr .mail-card-open div.utils-container {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+}
 
 .mails-container table .time {
     font-size: 0.75rem;
 }
 
+.mails-container table td div.utils-container>:not(:last-child) {
+    margin: 0 5px
+}
 
 .mail-card-open td .header {
     display: flex;
@@ -24,7 +39,7 @@
 }
 
 .mail-card-open td {
-    
+
     justify-content: start;
 }
 
@@ -61,4 +76,7 @@
         min-width: 270px
     }
 
+    .mail-card-open div.utils-container {
+        flex-direction: row;
+    }
 }

@@ -2,7 +2,7 @@
     flex: 0.75;
     display: flex;
     flex-direction: row;
-
+    height: 179px;
     margin-bottom: 40px;
     position: relative;
     margin-inline-end: 10px;
@@ -29,13 +29,20 @@
     width: 90%;
 }
 
+.mail-folders-containers button:active {
+    background-color: var(--main-bg-color);
+    outline: 5px var(--read-mail) solid;
+    box-shadow: 0 0 0 0;
+    width: 90%;
+}
+
 
 @media (min-width:940px) {
     .mail-folders-containers {
         flex-direction: column;
         margin-inline-end: 0px;
     }
-    
+
     .mail-folders-containers button {
         padding: 10px;
         border-top-right-radius: 20px;
