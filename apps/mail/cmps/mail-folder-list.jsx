@@ -33,7 +33,7 @@ export function MailFolderList({ onSetFilter }) {
         <button onClick={() => onChangeFilter('sent')}
             className="fa fa-send"></button>
         <button onClick={() => onChangeFilter('favorite')}
-            className="fa fa-favorite">⭐</button>
+            className="fa fa-favorite"></button>
 
     </section>
 }

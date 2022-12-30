@@ -52,11 +52,10 @@ nav a:hover {
 
 @media (max-width: 720px) { 
     .app-header-container {
-        width: 152vw;
+        width: 100vw;
     }
 
     .nav-menu {
-        right: -180px;
         width: 100px;
         height: 400px;
     }

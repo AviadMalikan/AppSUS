@@ -3,8 +3,7 @@ import { NoteImg } from '../cmps/note-img.jsx';
 import { NoteTodos } from '../cmps/note-todos.jsx';
 import { NoteVideo } from './note-video.jsx';
 
-export function DynamicCmp({ type, note }) {
-
+export function DynamicCmp({ type, note, onIsDone }) {
 
     function getNoteType(type) {
         switch (type) {
@@ -15,7 +14,7 @@ export function DynamicCmp({ type, note }) {
                 return <NoteImg note={note} />
 
             case "note-todos":
-                return <NoteTodos note={note} />
+                return <NoteTodos note={note} onIsDone={onIsDone} />
 
             case "note-vid":
                 return <NoteVideo note={note} />

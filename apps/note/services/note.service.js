@@ -12,9 +12,16 @@ export const noteService = {
     getDefaultFilter,
     getEmptyNote,
     remove,
-    save
+    save,
+    createTodo
 }
 
+function createTodo(txt) {
+    return {
+        txt,
+        isDone: false
+    }
+}
 
 function query(filterBy = getDefaultFilter()) {
     return asyncStorageService.query(NOTE_KEY)

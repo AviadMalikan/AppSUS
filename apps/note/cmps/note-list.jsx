@@ -1,14 +1,15 @@
 import { DynamicCmp } from "./dynamic-cmp.jsx"
-import { noteService } from '../services/note.service.js';
-import { utilService } from "../../../services/util.service.js";
 
-export function NoteList({ notes, onRemoveNote, onDuplicateNote, onPinNote, onChangeNoteColor }) {
+
+export function NoteList({ notes, onRemoveNote, onDuplicateNote, onPinNote, onChangeNoteColor, onIsDone }) {
 
     return <section className="note-list">
 
-        {notes.map(note => note.isPinned && <div style={{ backgroundColor: note.style.backgroundColor }} className="note" key={note.id}>
 
-            <DynamicCmp type={note.type} note={note} />
+        {notes.map(note => note.isPinned && <div style={{ backgroundColor: note.style.backgroundColor }} className="note" key={note.id}>
+     
+
+            <DynamicCmp type={note.type} note={note} onIsDone={onIsDone}/>
 
             <section className="note-edit-btns">
                 <button className="fa color-btn btn">
@@ -32,10 +33,12 @@ export function NoteList({ notes, onRemoveNote, onDuplicateNote, onPinNote, onCh
             </section>
         </div>
         )}
+        <hr />
 
         {notes.map(note => !note.isPinned && <div style={{ backgroundColor: note.style.backgroundColor }} className="note" key={note.id}>
+     
 
-            <DynamicCmp type={note.type} note={note} />
+            <DynamicCmp type={note.type} note={note} onIsDone={onIsDone}/>
 
             <section className="note-edit-btns">
                 <button className="fa color-btn btn">

@@ -11,27 +11,40 @@ export function NoteAdd({ onSaveNote }) {
         ev.preventDefault()
         setType((prevType) => prevType = type)
         setNewNote((prevNote) => {
-            return { ...prevNote, type: type}
+            return { ...prevNote, type: type }
         })
     }
 
     function getPlaceholder() {
-        const {type} = newNote
-        if (type === 'note-txt') return 'Enter text' 
-       else if (type === 'note-img') return 'Enter image url' 
-       else if (type === 'note-vid') return 'Enter video url' 
-       else if (type === 'note-todos') return 'eneter tototoddos' 
+        const { type } = newNote
+        if (type === 'note-txt') return 'Enter text'
+        else if (type === 'note-img') return 'Enter image url'
+        else if (type === 'note-vid') return 'Enter video url'
+        else if (type === 'note-todos') return 'eneter tototoddos'
     }
 
     function getInputName() {
-        const {type} = newNote
+        const { type } = newNote
         if (type === 'note-txt') return 'txt'
-       else if (type === 'note-img' || type === 'note-vid') return 'url' 
-       else if (type === 'note-todos') return 'todos' 
+        else if (type === 'note-img' || type === 'note-vid') return 'url'
+        else if (type === 'note-todos') return 'todos'
     }
 
     function handleChange({ target }) {
         let { value, name: field } = target
+        console.log('[field] = ', [field])
+        if (field === 'todos') {
+            const todos = value.split(',')
+            const newTodos = todos.map(todo => noteService.createTodo(todo))
+            setNewNote((prevNote) => ({
+                ...prevNote, info: {
+                    ...prevNote.info, todos: newTodos
+                }
+            }))
+            return
+        }
+
+
         setNewNote((prevNote) => ({
             ...prevNote, info: {
                 ...prevNote.info, [field]: value

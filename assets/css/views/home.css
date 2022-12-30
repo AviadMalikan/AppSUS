@@ -25,13 +25,13 @@
 
 .home .main-logo-img {
     height: 550px;
-    width: 800px;
+    width: 850px;
     transition: .5s;
 }
 
 .home .main-logo-img:hover {
     height: 570px;
-    width: 840px;
+    width: 880px;
 }
 
 @media (max-width: 720px) {   
