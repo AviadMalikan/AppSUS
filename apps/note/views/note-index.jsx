@@ -62,13 +62,16 @@ export function NoteIndex() {
     }
 
     function onPinNote(note) {
-
-
+        console.log('note = ', note)
+       if (note.isPinned) note.isPinned = false
+       else note.isPinned = true
+        noteService.save(note).then(() => {loadNotes()})
     }
 
 
     function onSetFilter(filterBy) {
         setFilterBy(filterBy)
+        
     }
 
     return <section className="note-index main-layout">
