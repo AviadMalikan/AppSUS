@@ -8,7 +8,7 @@
 }
 
 .note {
-    display: flex;     
+    display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
@@ -110,16 +110,16 @@
 
 @media (max-width: 720px) {
     .note-list {
-    columns: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+        columns: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100vw;
     }
 
     .note {
-       min-width: 100vw;
+        min-width: 100vw;
     }
 
 }

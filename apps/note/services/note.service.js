@@ -77,8 +77,9 @@ function getDefaultFilter() {
 function getEmptyNote(type) {
     return {
         type,
+        isPinned: false,
         info: {
-      
+            
         },
         style: {
             backgroundColor: ''
@@ -112,7 +113,7 @@ function _createNotes() {
             {
                 id: "n101",
                 type: "note-txt",
-                isPinned: true,
+                isPinned: false,
                 info: {
                     txt: "Fullstack Me Baby!"
                 },
@@ -123,6 +124,7 @@ function _createNotes() {
             {
                 id: "n103",
                 type: "note-todos",
+                isPinned: false,
                 info: {
                     lable: "Get my stuff together", todos: [
                         { txt: "Driving liscence", doneAt: null },
@@ -135,6 +137,7 @@ function _createNotes() {
             {
                 id: "n102",
                 type: "note-img",
+                isPinned: true,
                 info: {
                     url: "https://miro.medium.com/max/1400/1*wygpuRlFHFxNtihw9WQv7Q.png",
                     title: "Life"
@@ -146,7 +149,7 @@ function _createNotes() {
             {
                 id: "n111",
                 type: "note-txt",
-                isPinned: true,
+                isPinned: false,
                 info: {
                     txt: `“The rare people who do become truly exceptional at something do so not because they believe they're exceptional. On the contrary, they become amazing because they're obsessed with improvement. And that obsession with improvement stems from an unerring belief that they are, in fact, not that great at all.”
                     ― Mark Manson. “The Subtle Art of Not Giving a F*ck“.`
@@ -158,6 +161,7 @@ function _createNotes() {
             {
                 id: "n108",
                 type: "note-todos",
+                isPinned: true,
                 info: {
                     lable: "DONT FORGET", todos: [
                         { txt: "Visit Grandma", doneAt: null },
@@ -172,6 +176,7 @@ function _createNotes() {
             {
                 id: "n105",
                 type: "note-img",
+                isPinned: false,
                 info: {
                     url: "https://www.datocms-assets.com/45470/1631110818-logo-react-js.png?fm=webp",
                     title: "Over Reacting"
@@ -183,6 +188,7 @@ function _createNotes() {
             {
                 id: "n110",
                 type: "note-txt",
+                isPinned: false,
                 info: {
                     txt: "You code and you code and you code... and what you get? APPSUlutely nothing",
                 },
@@ -193,6 +199,7 @@ function _createNotes() {
             {
                 id: "n104",
                 type: "note-vid",
+                isPinned: false,
                 info: {
                     url: "https://www.youtube.com/watch?v=MPLUllINDSY",
                     title: "Catch and Release"
