@@ -1,6 +1,7 @@
 .main-compose form {
     position: fixed;
     display: flex;
+    z-index: 5;
     flex-direction: column;
     right: 20px;
     bottom: 0;

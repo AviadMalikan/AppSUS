@@ -1,12 +1,15 @@
 .new-mail-btn {
     position: fixed;
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    right: 15px;
-    bottom: 15px;
+    right: 50px;
+    bottom: 50px;
     font-size: 1.5rem;
-    background-color: var(--clr5);
+    background-color: #eeba0b;
+}
+.new-mail-btn:hover{
+    bottom: 65px;
 }
 
 
