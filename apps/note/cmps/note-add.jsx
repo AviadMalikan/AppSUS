@@ -35,14 +35,12 @@ export function NoteAdd({ onSaveNote }) {
         console.log('[field] = ', [field])
         if (field === 'todos') {
             const todos = value.split(',')
-            console.log('todos = ', todos)
-            todos.map( todo => {todo.txt = todo}) 
-            console.log('todos after map = ', todos)
-            // setNewNote((prevNote) => ({
-            //     ...prevNote, info: {
-            //         ...prevNote.info, [field]: todos
-            //     }
-            // }))
+            const newTodos = todos.map(todo => noteService.createTodo(todo))
+            setNewNote((prevNote) => ({
+                ...prevNote, info: {
+                    ...prevNote.info, todos: newTodos
+                }
+            }))
             return
         }
 
@@ -55,30 +53,30 @@ export function NoteAdd({ onSaveNote }) {
     }
 
 
-        return <div className="note-add">
-            <section className="add-input">
-                <form onSubmit={() => onSaveNote(event, newNote)} className="form">
-                    <input
-                        type="text"
-                        id="txt"
-                        name={getInputName()}
-                        placeholder={getPlaceholder()}
-                        value={newNote.txt}
-                        onChange={handleChange}
-                    />
+    return <div className="note-add">
+        <section className="add-input">
+            <form onSubmit={() => onSaveNote(event, newNote)} className="form">
+                <input
+                    type="text"
+                    id="txt"
+                    name={getInputName()}
+                    placeholder={getPlaceholder()}
+                    value={newNote.txt}
+                    onChange={handleChange}
+                />
 
-                    <section className="type-btns">
-                        <button type="button" onClick={() => setNoteType(event, 'note-txt')} className="add-note-btn btn fa txt-keep-btn"> </button>
-                        <button type="button" onClick={() => setNoteType(event, 'note-img')} className="add-note-btn btn fa img-keep-btn"> </button>
-                        <button type="button" onClick={() => setNoteType(event, 'note-todos')} className="add-note-btn btn fa todos-keep-btn"> </button>
-                        <button type="button" onClick={() => setNoteType(event, 'note-vid')} className="add-note-btn btn fa vid-keep-btn"> </button>
-                    </section>
+                <section className="type-btns">
+                    <button type="button" onClick={() => setNoteType(event, 'note-txt')} className="add-note-btn btn fa txt-keep-btn"> </button>
+                    <button type="button" onClick={() => setNoteType(event, 'note-img')} className="add-note-btn btn fa img-keep-btn"> </button>
+                    <button type="button" onClick={() => setNoteType(event, 'note-todos')} className="add-note-btn btn fa todos-keep-btn"> </button>
+                    <button type="button" onClick={() => setNoteType(event, 'note-vid')} className="add-note-btn btn fa vid-keep-btn"> </button>
+                </section>
 
-                </form>
+            </form>
 
 
-            </section>
+        </section>
 
-            {/* <Link to="/note">back</Link> */}
-        </div>
-    }
+        {/* <Link to="/note">back</Link> */}
+    </div>
+}

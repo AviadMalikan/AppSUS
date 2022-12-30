@@ -17,6 +17,7 @@ export function NoteIndex() {
     }, [filterBy])
 
     function loadNotes() {
+        console.log('loading');
         noteService.query(filterBy)
             .then(notesToDisplay => {
                 setNotes(notesToDisplay)
@@ -39,7 +40,6 @@ export function NoteIndex() {
     function onSaveNote(ev, newNote) {
         ev.preventDefault()
         console.log('newNote = ', newNote)
-        return
         noteService.save(newNote).then((note) => {
             setNotes((prevNotes) => [...prevNotes, note])
             // showSuccessMsg('Book saved!')
@@ -72,10 +72,15 @@ export function NoteIndex() {
         noteService.save(note).then(() => {loadNotes()})
     }
 
+    function onIsDone(note, todo) {
+        if (todo.isDone) todo.isDone = false
+        else todo.isDone = true
+        noteService.save(note).then((note) => setNotes((prevNotes) => [...prevNotes, note]))
+    }
+
 
     function onSetFilter(filterBy) {
-        setFilterBy(filterBy)
-        
+        setFilterBy(filterBy) 
     }
 
     return <section className="note-index main-layout">
@@ -86,7 +91,7 @@ export function NoteIndex() {
         <NoteFilter onSetFilter={onSetFilter} />
 
 
-        {notes && <NoteList notes={notes} onRemoveNote={onRemoveNote} onDuplicateNote={onDuplicateNote} onPinNote={onPinNote} onChangeNoteColor={onChangeNoteColor} />}
+        {notes && <NoteList notes={notes} onRemoveNote={onRemoveNote} onDuplicateNote={onDuplicateNote} onPinNote={onPinNote} onChangeNoteColor={onChangeNoteColor} onIsDone={onIsDone} />}
 
 
     </section>
