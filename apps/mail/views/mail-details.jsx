@@ -14,7 +14,7 @@ export function MailDetail() {
     const params = useParams()
     const navigate = useNavigate()
 
-    
+
     useEffect(() => {
         loadMail()
     }, [])
@@ -67,12 +67,12 @@ export function MailDetail() {
             </div>
         </article>
         <div className="title">
+            <h2>{mail.subject}</h2>
             <div className="details">
-                <h2>{mail.subject}</h2>
                 <h5>{`<from ${mail.from}>`}</h5>
+                <h5>{utilService.getTimeFormat(mail.sentAt)}</h5>
             </div>
 
-            <h5>{utilService.getTimeFormat(mail.sentAt)}</h5>
         </div>
 
         {isComposeShow &&
