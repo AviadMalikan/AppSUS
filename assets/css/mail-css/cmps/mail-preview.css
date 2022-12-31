@@ -53,6 +53,7 @@ td .utils-container {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    margin-bottom: 5px;
 }
 
 
@@ -78,8 +79,12 @@ td .utils-container {
 }
 
 .mail-card-open h3 {
-    width: 1000%;
+    width: 100%;
     margin: 0;
+}
+.mail-card-open h5 {
+    margin: 0;
+    margin-top: 10px;
 }
 
 
@@ -118,6 +123,6 @@ td .utils-container {
     .mails-container table .mail-card-open {
         flex-direction: column;
         width: 100%;
-        padding: 20px 60px;
+        padding: 20px 25px;
     }
 }

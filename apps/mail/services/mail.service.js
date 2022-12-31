@@ -60,7 +60,6 @@ function getEmptyMail() {
     }
 }
 
-
 function save(mail) {
     if (mail.id) {
         return asyncStorageService.put(MAIL_KEY, mail)

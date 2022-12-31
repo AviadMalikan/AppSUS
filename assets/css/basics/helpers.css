@@ -77,6 +77,21 @@
     content: "\f005";
 }
 
-.fa .fa-folder::before {
+.fa-folder::before {
     content: "\f07b";
+}
+
+.fa-replay::before {
+    content: "\f3e5";
+}
+
+.fa-arrow-left::before{
+    content: "\f55a"
+}
+
+.fa-minus::before{
+    content: "\f068"
+}
+.fa-x::before{
+    content: "\58"
 }

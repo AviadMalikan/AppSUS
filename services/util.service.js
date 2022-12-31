@@ -8,6 +8,7 @@ export const utilService = {
     getDayName,
     getMonthName,
     debounce,
+    getTimeFormat,
 }
 
 function makeId(length = 6) {
@@ -50,7 +51,7 @@ function padNum(num) {
     return (num > 9) ? num + '' : '0' + num
 }
 
-function getDayName(date, locale ='en') {
+function getDayName(date, locale = 'en') {
     date = new Date(date)
     return date.toLocaleDateString(locale, { weekday: 'long' })
 }
@@ -68,4 +69,12 @@ function debounce(func, timeout = 500) {
         clearTimeout(timer);
         timer = setTimeout(() => { func.apply(args); }, timeout);
     };
+}
+
+function getTimeFormat(timeStamp) {
+    const date = new Date(timeStamp)
+    const timeFormat = date.getHours() + ":"
+        + date.getMinutes() + ", "
+        + date.toDateString();
+    return timeFormat
 }

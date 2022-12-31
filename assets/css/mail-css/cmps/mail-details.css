@@ -1,0 +1,83 @@
+.mail-container {
+    width: 100%;
+}
+
+
+.mail-container .header-container {
+    border-radius: 3px;
+    padding: 5px;
+    background-color: var(--header-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.mail-container span {
+    padding: 5px 15px;
+}
+
+.mail-container .header {
+    display: flex;
+    align-items: center;
+}
+
+
+.mail-container .utils-container {
+    display: flex;
+    align-items: center;
+}
+
+.mail-container .utils-container>:not(first-child) {
+    margin: 5px 10px;
+}
+
+.mail-container .title {
+    display: flex;
+    padding: 5px 20px;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+
+.title h5 {
+    margin: 0 5px
+}
+
+
+.title .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.body {
+    margin: 30px 10px;
+}
+
+@media (min-width:960px) {
+    .title .details {
+        text-align: start;
+    }
+
+    .title .details h5 {
+        margin: 5px
+    }
+
+    .mail-container .title {
+        margin: 0 auto;
+        width: 80%;
+        flex-direction: row;
+        display: flex;
+        /* padding: 50px; */
+    }
+
+    .title h5 {
+        margin: 15px;
+    }
+
+    .body {
+        margin: 20px 50px;
+    }
+}

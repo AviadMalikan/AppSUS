@@ -25,18 +25,15 @@ export function MailFolderList({ onSetFilter }) {
     }
 
     return <section className="mail-folders-containers">
-        
-        <NavLink to="/mail" >
-            <span onClick={() => onChangeFilter('inbox')}
-                className="fa fa-inbox"></span>
+
+        <NavLink to="/mail" onClick={() => onChangeFilter('inbox')}
+            className="fa fa-inbox">
         </NavLink>
-        <NavLink to="/mail" >
-            <span onClick={() => onChangeFilter('sent')}
-                className="fa fa-send"></span>
+        <NavLink to="/mail"  onClick={() => onChangeFilter('sent')}
+                className="fa fa-send">
         </NavLink>
-        <NavLink to="/mail" >
-            <span onClick={() => onChangeFilter('favorite')}
-                className="fa fa-favorite"></span>
+        <NavLink to="/mail"  onClick={() => onChangeFilter('favorite')}
+                className="fa fa-favorite">
         </NavLink>
 
     </section>

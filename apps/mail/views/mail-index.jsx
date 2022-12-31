@@ -1,4 +1,4 @@
-const { useState, useEffect } = React
+const { useState, useEffect, Fragment } = React
 
 import { mailService } from "../services/mail.service.js";
 import { MailList } from "../cmps/mail-list.jsx";
@@ -10,18 +10,21 @@ export function MailIndex() {
     const [mails, setMails] = useState([])
     const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter)
     const [isComposeShow, setIsComposeShow] = useState(false)
+    const [isBigCompose, setIsBigCompose] = useState(false)
 
     useEffect(() => {
-        loadMails(filterBy)
+        loadMails()
     }, [])
 
     useEffect(() => {
-        loadMails(filterBy)
+        loadMails()
     }, [filterBy])
 
     function loadMails() {
         mailService.query(filterBy)
             .then(mailsToUpload => {
+
+                console.log('mailsToUpload: ', mailsToUpload)
                 setMails(mailsToUpload)
             })
     }
@@ -59,16 +62,22 @@ export function MailIndex() {
         setIsComposeShow(prevIsMsgCmp => setIsComposeShow(!prevIsMsgCmp))
     }
 
+    function onIsComposeBig() {
+        setIsBigCompose(prevIsBigCompose => !prevIsBigCompose)
+    }
 
-    return <section className="main-layout">
-
+    return <Fragment>
+        {(isBigCompose && isComposeShow) && <div className="main-screen hover" onClick={onIsMsgCmp}></div>}
         <MailFilter onSetFilter={onSetFilter} />
 
         {!isComposeShow && <button onClick={onIsMsgCmp} className="fa fa-add new-mail-btn"></button>}
         {isComposeShow &&
             <MailCompose
                 onSubmitEmail={onSubmitEmail}
-                onIsMsgCmp={onIsMsgCmp} />}
+                onIsMsgCmp={onIsMsgCmp}
+                onIsComposeBig={onIsComposeBig}
+                isBigCompose={isBigCompose} />}
+
         <section className="main-content-container flex">
 
             <MailFolderList onSetFilter={onSetFilter} />
@@ -78,6 +87,6 @@ export function MailIndex() {
                 onIsRead={onIsRead} />
         </section>
 
-    </section >
+    </Fragment >
 }
 

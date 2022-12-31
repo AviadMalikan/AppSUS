@@ -3,7 +3,7 @@
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    right: 50px;
+    right: 20px;
     bottom: 50px;
     font-size: 1.5rem;
     background-color: var(--main-yellow);
@@ -20,11 +20,23 @@
     flex-direction: column;
 }
 
+.main-screen {
+    position: fixed;
+    background-color: rgba(128, 128, 128, 0.235);
+    inset: 0;
+    z-index: 1;
+    opacity: 1;
+}
 
 @media (min-width:940px) {
 
     .main-content-container {
         margin-bottom: 40px;
         flex-direction: row;
+    }
+
+    .new-mail-btn {
+        right: 50px;
+        bottom: 50px;
     }
 }

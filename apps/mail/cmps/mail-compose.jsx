@@ -4,15 +4,16 @@ const { useNavigate, Fragment } = ReactRouterDOM
 import { mailService } from "../services/mail.service.js";
 
 
-export function MailCompose({ onIsMsgCmp, onSubmitEmail }) {
+export function MailCompose({ onIsComposeBig, isBigCompose, onIsMsgCmp, onSubmitEmail, mail }) {
     const [newEmail, setNewEmail] = useState(mailService.getEmptyMail)
+
     const navigate = useNavigate()
+
     useEffect(() => {
     }, [newEmail])
 
 
     function handleEvent({ target }) {
-
         let { value, name: field } = target
         setNewEmail(prevEmail => {
             return { ...prevEmail, [field]: value }
@@ -20,7 +21,7 @@ export function MailCompose({ onIsMsgCmp, onSubmitEmail }) {
     }
 
 
-    return <section className="main-compose">
+    return <section className={isBigCompose ? 'main-compose-big' : 'main-compose'}>
         <form onSubmit={(ev) => {
             onIsMsgCmp()
             onSubmitEmail(ev, newEmail)
@@ -28,8 +29,11 @@ export function MailCompose({ onIsMsgCmp, onSubmitEmail }) {
             <section className="inputs-container">
                 <div className="header-form">
                     <span>New Massage</span>
-                    <span className="fa fa-open-window" onClick={onIsMsgCmp}></span>
-                    <span className="hover" onClick={onIsMsgCmp}>X</span>
+                    <div className="header-utils">
+                        <span className={`fa ${isBigCompose ? 'fa-minus ' : 'fa-open-window'} hover`}
+                            onClick={onIsComposeBig}></span>
+                        <span className="fa fa-x hover" onClick={onIsMsgCmp}></span>
+                    </div>
                 </div>
 
                 <article>
@@ -64,7 +68,7 @@ export function MailCompose({ onIsMsgCmp, onSubmitEmail }) {
             </section>
 
             <button>Send!</button>
-        </form>
+        </form >
 
-    </section>
+    </section >
 }

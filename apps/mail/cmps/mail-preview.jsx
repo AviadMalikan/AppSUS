@@ -14,7 +14,7 @@ export function MailPreview({ mail, onRemoveMail, onIsRead }) {
 
     function getLength() {
         let width = document.body.clientWidth
-        let Divide = 30
+        let Divide = 10
         if (width > 1300) Divide = 10
         else if (width > 900) Divide = 20
         return width / Divide
@@ -48,7 +48,7 @@ export function MailPreview({ mail, onRemoveMail, onIsRead }) {
                     <span className="hover fa fa-favorite"></span>
 
                     <span className="">
-                        <Link to={`/mail/${mail.id}`}><span className="hover fa fa-open-window"/></Link>
+                        <Link to={`/mail/${mail.id}`}><span className="hover fa fa-open-window" /></Link>
                     </span>
 
                     <span onClick={() => onRemoveMail(mail.id)} className="hover fa fa-trash"></span>
@@ -63,7 +63,7 @@ export function MailPreview({ mail, onRemoveMail, onIsRead }) {
                 <div className="header-container">
                     <div className="header">
                         <h2 onClick={onTextShown} className="hover"> {mail.subject}</h2>
-                        <td><h5>{`< from ${mail.from} >`}</h5></td>
+                        <h5>{`< At ${utilService.getTimeFormat(mail.sentAt)} >`}</h5>
                     </div>
                     <div className="utils-container">
 
