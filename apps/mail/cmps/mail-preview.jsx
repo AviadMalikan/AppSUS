@@ -14,7 +14,7 @@ export function MailPreview({ mail, onRemoveMail, onIsRead }) {
 
     function getLength() {
         let width = document.body.clientWidth
-        let Divide = 10
+        let Divide = 5
         if (width > 1300) Divide = 10
         else if (width > 900) Divide = 20
         return width / Divide
@@ -29,7 +29,6 @@ export function MailPreview({ mail, onRemoveMail, onIsRead }) {
 
         {!isTextShown && <tr className={`mail-card flex ${mail.isRead ? 'msg-read' : ''}`} >
 
-            <td></td>
             <td className="title hover" onClick={onTextShown}>
                 <LongTxt txt={mail.subject} userLength={25} />
             </td>
@@ -38,7 +37,7 @@ export function MailPreview({ mail, onRemoveMail, onIsRead }) {
                 <LongTxt txt={mail.body} userLength={getLength()} />
             </td>
             <td className="utils-td">
-                <span className="time">{getTime(mail.sentAt)}</span>
+                {/* <span className="time">{getTime(mail.sentAt)}</span> */}
                 <div className="utils-container">
 
 
@@ -61,9 +60,12 @@ export function MailPreview({ mail, onRemoveMail, onIsRead }) {
         {isTextShown && <tr className="mail-card-open" >
             <td className="header">
                 <div className="header-container">
-                    <div className="header">
-                        <h2 onClick={onTextShown} className="hover"> {mail.subject}</h2>
-                        <h5>{`< At ${utilService.getTimeFormat(mail.sentAt)} >`}</h5>
+                    <div onClick={onTextShown} className="header hover">
+                        <h2  className="hover"> {mail.subject}</h2>
+                        <div>
+                        <h5>{`< ${mail.from}>`}</h5>
+                        <h5>{` At ${utilService.getTimeFormat(mail.sentAt)} `}</h5>
+                        </div>
                     </div>
                     <div className="utils-container">
 

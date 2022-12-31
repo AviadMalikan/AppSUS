@@ -20,11 +20,9 @@ export function MailIndex() {
         loadMails()
     }, [filterBy])
 
-    function loadMails() {
+    function loadMails() {    
         mailService.query(filterBy)
             .then(mailsToUpload => {
-
-                console.log('mailsToUpload: ', mailsToUpload)
                 setMails(mailsToUpload)
             })
     }

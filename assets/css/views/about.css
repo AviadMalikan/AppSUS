@@ -78,4 +78,10 @@
     .main-about .about-logo {
         height: 100px;
     }
+
+    .team p {
+        padding: 0 100px;
+    }
+
+
 }

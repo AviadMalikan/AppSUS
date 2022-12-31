@@ -155,6 +155,29 @@ function _createMails() {
                 to: 'user@appsus.com'
             },
             {
+                id: 'e111',
+                subject: `long time no see`,
+                body: `your eye test is ready call to get the result.`,
+                isRead: true,
+                sentAt: 1551133903030,
+                from: 'seemore@seemore.com',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e112',
+                subject: `Your Amazon.com order #233-1234567-1234567`,
+                body: `Hello Aviad,Thank you for shopping with us. We’ll send a confirmation when your item ships.
+                Details:
+                Order #113-9321815-0184219
+                Arriving:
+                January 16
+                We hope to see you again soon.`,
+                isRead: true,
+                sentAt: 1551133902024,
+                from: 'Amazon@amazon.com',
+                to: 'user@appsus.com'
+            },
+            {
                 id: 'e109',
                 subject: `Your Amazon.com order #233-1234567-1234567`,
                 body: `Hello Aviad,Thank you for shopping with us. We’ll send a confirmation when your item ships.
@@ -178,13 +201,75 @@ function _createMails() {
                 to: 'user@appsus.com'
             },
             {
-                id: 'e111',
-                subject: `long time no see`,
-                body: `your eye test is ready call to get the result.`,
+                id: 'e113',
+                subject: `Your Amazon.com order #233-1234567-1234567`,
+                body: `Hello Aviad,Thank you for shopping with us. We’ll send a confirmation when your item ships.
+                Details:
+                Order #113-9321815-0184219
+                Arriving:
+                January 16
+                We hope to see you again soon.`,
                 isRead: true,
-                sentAt: 1551133903030,
-                from: 'seemore@seemore.com',
+                sentAt: 1551133902024,
+                from: 'Amazon@amazon.com',
                 to: 'user@appsus.com'
+            },
+            {
+                id: 'e114',
+                subject: `Welcome to TMDB!`,
+                body: `aviad_malikan, welcome to TMDB!
+                Thanks for registering an account on The Movie Database (TMDB). We're excited to see you join the community! As a member of TMDB, you get access to things like maintaining your watchlist, creating custom lists, rate your recently watched movies and TV shows as well as contribute reviews and discussions.
+                
+                The best thing about TMDB is our incredible community. All of the data that's been added to our database has been contributed by users like you. If you have any interest in helping we recommend taking a read through our contribution bible.
+                
+                Take some time to look around and if you have any questions, feel free to stop by the forums.
+                `,
+                isRead: true,
+                sentAt: 1551133902024,
+                from: 'no-reply@themoviedb.org',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e115',
+                subject: `Welcome to deviantART!`,
+                body: `,
+ 
+                You have just joined the world's largest community of artists and art appreciators. We're glad to have you! Before you get started, please verify your email so that we know you're a real human`,
+                isRead: true,
+                sentAt: 1551133902024,
+                from: 'no-reply@daviArt.org',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e116',
+                subject: `We’ve updated our Terms of Use`,
+                body: ` 
+                Hi aviad_malikan,
+                We wanted to let you know that we’re making a few updates to our Terms of Use to make them clearer. We’re making it easier to understand what is allowed on Instagram and how our service works. These terms will be effective on December 20, 2020, and continuing to use the app will mean you accept them.`,
+                isRead: true,
+                sentAt: 1551133902024,
+                from: 'no-reply@mail.instagram.com',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e117',
+                subject: `We’ve updated our Terms of Use`,
+                body: `Hey Instagram i dont care`,
+                isRead: true,
+                sentAt: 1551133902024,
+                from: 'user@appsus.com',
+                to: 'no-reply@mail.instagram.com'
+            },
+            {
+                id: 'e118',
+                subject: `Ola TO you`,
+                body: ` 
+                Hi lihi this is ,
+                We wanted to let you know that we’re making a few updates to our Terms of Use to make them clearer. We’re making it easier to understand what is allowed on Instagram and how our service works. These terms will be effective on December 20, 2020, and continuing to use the app will mean you accept them.`,
+                isRead: true,
+                sentAt: 1551133902024,
+                from: 'user@appsus.com',
+                to: 'no-reply@mail.instagram.com'
             },
 
         ]
@@ -194,8 +279,8 @@ function _createMails() {
 
 
 // const emails = [
-//     {
-//         id: 'e101',
+    //     {
+        //         id: 'e101',
 //         subject: 'Miss you!',
 //         body: 'Would love to catch up sometimes', isRead: false,
 //         sentAt: 1551133930594,

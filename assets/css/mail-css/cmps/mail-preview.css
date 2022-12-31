@@ -1,5 +1,5 @@
 .mails-container table td {
-    padding: 5px;
+    padding: 20px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -27,7 +27,8 @@ td .utils-container {
 }
 
 .mails-container td div.utils-container>* {
-    margin: 0 5px
+    margin: 0 5px;
+    font-size: 1.75rem;
 }
 
 .mails-container table .mail-card-open {
@@ -36,17 +37,24 @@ td .utils-container {
     height: flex;
     background-color: var(--read-mail);
     display: block;
-    padding: 20px 40px;
+    padding: 20px 15px;
     flex-direction: column;
+}
+
+.mails-container table .title {
+    font-size: 1.75rem;
 }
 
 .mail-card-open td .utils-container {
     flex-direction: column;
-    margin: 5;
+    height: 150px;
+    margin: 0;
+    margin-inline-start: 15px;
 }
 
 .mail-card-open td .utils-container>* {
-    margin: 5px 0
+    margin: 5px 0;
+    font-size: 2rem;
 }
 
 .mail-card-open td .header-container {
@@ -70,26 +78,38 @@ td .utils-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+}
+
+.mail-card-open td.header {
+    margin-bottom: 10px;
 }
 
 .mail-card-open h2 {
     display: flex;
     align-items: center;
+    font-size: 2rem;
     margin: 0;
+    margin-bottom: 20px
 }
 
 .mail-card-open h3 {
-    width: 100%;
+    /* width: 100%; */
+    font-size: 1rem;
     margin: 0;
+    font-family: 'lato-light';
 }
+
 .mail-card-open h5 {
     margin: 0;
-    margin-top: 10px;
+    font-family: 'lato-light';
 }
 
 
 @media (min-width:940px) {
-
+    .mails-container table td {
+        padding: 5px;
+    }
 
     .mail-card-open td .header {
         width: 100%;
@@ -102,18 +122,26 @@ td .utils-container {
         justify-content: space-between;
     }
 
+
     .mails-container table .title {
-        min-width: 270px
+        min-width: 270px;
+        font-size: 1rem;
+
     }
 
-    .mail-card-open div.utils-container {
-        flex-direction: row;
-        align-items: flex-start;
+    .mail-card-open td .utils-container {
+        flex-direction: column;
+        height: auto;
     }
 
     .mail-card-open td .utils-container>* {
         margin: 0 10px;
         padding: 5px;
+        font-size: 1rem;
+    }
+
+    .mails-container td div.utils-container>* {
+        font-size: 1rem;
     }
 
     .mails-container td div.utils-container>:not(:last-child) {

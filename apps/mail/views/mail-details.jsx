@@ -14,7 +14,7 @@ export function MailDetail() {
     const params = useParams()
     const navigate = useNavigate()
 
-
+    
     useEffect(() => {
         loadMail()
     }, [])
@@ -46,7 +46,10 @@ export function MailDetail() {
 
     function onRemoveMail(mailId) {
         mailService.remove(mailId)
-        mailService.query().then(console.log)
+        mailService.query().then(() => {
+            const updatedNotes = notes.filter(note => note.id !== noteId)
+        })
+
         navigate('/mail')
     }
 
@@ -73,10 +76,10 @@ export function MailDetail() {
         </div>
 
         {isComposeShow &&
-            <MailCompose 
-            onIsComposeBig={onIsComposeBig}
-            isBigCompose={isBigCompose}
-            onIsMsgCmp={onIsMsgCmp} mail={mail} />}
+            <MailCompose
+                onIsComposeBig={onIsComposeBig}
+                isBigCompose={isBigCompose}
+                onIsMsgCmp={onIsMsgCmp} mail={mail} />}
 
         <h3 className="body">{mail.body}</h3>
 
