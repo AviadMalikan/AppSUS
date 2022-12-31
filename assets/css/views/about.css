@@ -1,34 +1,84 @@
-.about {
+.main-about {
+    /* background-color: red; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.about-logo {
-    width: 80px;
-    height: 50px;
-    border-radius: 20%;
+
+.main-about .main-logo {
+    padding-bottom: 20px;
+    font-size: 1.5rem;
+    width: 70%;
+    min-width: 153px;
+    max-width: 820px;
 }
 
-.about .subtitle {
-    background-color: var(--header-bg-color);
-    border-radius: 5px;
-    width: 400px;
+.main-about .about-logo {
+    transition: .5s;
+    height: 100px;
 }
 
-.about .team-bg {
-    position: absolute;
-    top: 17%;
+.about-app {
+    margin-bottom: 40px;
 }
 
-.about .team {
+.imgs {
+    position: relative;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 40px;
+}
+
+.imgs .gray-circle {
+    /* width: 330px; */
+    left: 20px;
+    position: relative;
+}
+
+.imgs .yellow-circle {
+    /* width: 330px; */
+    left: -20px;
+    position: relative;
+}
+
+.main-about .team {
+    columns: 2;
+    column-rule: 1px gray solid;
     font-family: 'lato-light';
-    margin-top: 10px;
-    width: 100vw;
-    height: 28vh;
-    padding: 50px 20px;
-    background-color: rgba(197, 197, 197, 0.54);
-    position: absolute;
-    top: 570px;
+    background-color: var(--header-bg-color);
+    border-radius: 5px;
+    padding: 30px 0;
+    margin-bottom: 40px;
+}
+
+.team p {
+    padding: 0 20px;
+}
+
+@media (min-width:940px) {
+
+    .gray-circle {
+        width: 330px;
+        left: 40px;
+        position: relative;
+    }
+
+    .yellow-circle {
+        width: 330px;
+        left: -40px;
+        position: relative;
+    }
+
+    .main-about .main-logo {
+        padding: 20px;
+        width: 80%;
+        font-size: 2rem;
+        max-width: 700px;
+    }
+
+    .main-about .about-logo {
+        height: 100px;
+    }
 }
