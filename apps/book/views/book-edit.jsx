@@ -41,11 +41,11 @@ export function BookEdit() {
     function onSaveBook(ev) {
         ev.preventDefault()
         BookService.save(bookToEdit).then((book) => {
-            showSuccessMsg('Book saved!')
+            // showSuccessMsg('Book saved!')
             navigate('/book')
         })
             .catch((err) => {
-                showErrorMsg('Cancled')
+                // showErrorMsg('Cancled')
             })
     }
 

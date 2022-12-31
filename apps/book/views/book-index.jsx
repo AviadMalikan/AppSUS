@@ -14,7 +14,7 @@ export function BookIndex() {
 
     useEffect(() => {
         loadBooks()
-    }, [filterBy, books])
+    }, [filterBy])
 
     function loadBooks() {
         BookService.query(filterBy)

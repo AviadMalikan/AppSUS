@@ -1,4 +1,7 @@
+
 export function BookPreview({book}) {
+ 
+
     return <article className="book-preview">
        <div className="img-container">
          <img src={book.thumbnail}/>
