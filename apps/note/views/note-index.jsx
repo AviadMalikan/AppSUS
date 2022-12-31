@@ -58,7 +58,6 @@ export function NoteIndex() {
         })
     }
 
-
     function onChangeNoteColor({ target }, note) {
         let { value } = target
         note.style.backgroundColor = value
@@ -75,9 +74,12 @@ export function NoteIndex() {
     function onIsDone(note, todo) {
         if (todo.isDone) todo.isDone = false
         else todo.isDone = true
-        noteService.save(note).then((note) => setNotes((prevNotes) => [...prevNotes, note]))
+        noteService.save(note).then(() => {loadNotes()})
     }
 
+    function onSendNoteAsEmail(note) {
+        console.log('note = ', note)
+    }
 
     function onSetFilter(filterBy) {
         setFilterBy(filterBy) 
@@ -91,7 +93,7 @@ export function NoteIndex() {
         <NoteFilter onSetFilter={onSetFilter} />
 
 
-        {notes && <NoteList notes={notes} onRemoveNote={onRemoveNote} onDuplicateNote={onDuplicateNote} onPinNote={onPinNote} onChangeNoteColor={onChangeNoteColor} onIsDone={onIsDone} />}
+        {notes && <NoteList notes={notes} onRemoveNote={onRemoveNote} onDuplicateNote={onDuplicateNote} onPinNote={onPinNote} onChangeNoteColor={onChangeNoteColor} onIsDone={onIsDone} onSendNoteAsEmail={onSendNoteAsEmail}/>}
 
 
     </section>

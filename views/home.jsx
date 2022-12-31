@@ -13,6 +13,7 @@ export function Home() {
             <NavLink className="app-link" to="/about"> <img src="./assets/img/about.png" alt="about" /></NavLink>
             <NavLink className="app-link" to="/mail"> <img src="./assets/img/gmail.png" alt="mail" /></NavLink>
             <NavLink className="app-link" to="/note"> <img src="./assets/img/keep.png" alt="keep" /></NavLink>
+            <NavLink className="app-link" to="/book"> <img src="./assets/img/book.png" alt="book" /></NavLink>
         </div>
     </section>
 }

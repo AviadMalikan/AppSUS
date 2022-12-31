@@ -12,7 +12,6 @@ export function MailCompose({ onIsMsgCmp, onSubmitEmail }) {
 
 
     function handleEvent({ target }) {
-
         let { value, name: field } = target
         setNewEmail(prevEmail => {
             return { ...prevEmail, [field]: value }

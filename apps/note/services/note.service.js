@@ -134,8 +134,8 @@ function _createNotes() {
                 isPinned: false,
                 info: {
                     lable: "Get my stuff together", todos: [
-                        { txt: "Driving liscence", doneAt: null },
-                        { txt: "Coding power", doneAt: 187111111 }]
+                        { txt: "Driving liscence", isDone: true },
+                        { txt: "Coding power", isDone: false }]
                 },
                 style: {
                     backgroundColor: "#cbc0d3"
@@ -171,9 +171,9 @@ function _createNotes() {
                 isPinned: true,
                 info: {
                     lable: "DONT FORGET", todos: [
-                        { txt: "Visit Grandma", doneAt: null },
-                        { txt: "Shop groceries", doneAt: 187111111 },
-                        { txt: "Fold laundry", doneAt: 187111111 }]
+                        { txt: "Visit Grandma", isDone: false },
+                        { txt: "Shop groceries", isDone: true },
+                        { txt: "Fold laundry", isDone: false }]
                 },
                 style: {
                     backgroundColor: "#2a9d8f"

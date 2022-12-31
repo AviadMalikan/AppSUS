@@ -21,6 +21,7 @@ export function AppHeader() {
                 <NavLink to="/about"> <img src="./assets/img/about.png" alt="about" /></NavLink>
                 <NavLink to="/mail"> <img src="./assets/img/gmail.png" alt="mail" /></NavLink>
                 <NavLink to="/note"> <img src="./assets/img/keep.png" alt="keep" /></NavLink>
+                <NavLink to="/book"> <img src="./assets/img/book.png" alt="book" /></NavLink>
             </nav>}
 
         </header >
