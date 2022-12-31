@@ -11,44 +11,69 @@
     flex: 1
 }
 
-.mails-container table tr .mail-card div.utils-container {
+td .utils-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-}
-
-.mails-container table tr .mail-card-open div.utils-container {
-    background-color: red;
-    display: flex;
-    flex-direction: column;
+    opacity: 1;
 }
 
 .mails-container table .time {
+    margin: 0 5px;
+    position: relative;
+    right: 0;
     font-size: 0.75rem;
 }
 
-.mails-container table td div.utils-container>:not(:last-child) {
+.mails-container td div.utils-container>* {
     margin: 0 5px
 }
 
-.mail-card-open td .header {
+.mails-container table .mail-card-open {
+    border-radius: 2px;
+    align-items: flex-start;
+    height: flex;
+    background-color: var(--read-mail);
+    display: block;
+    padding: 20px 40px;
+    flex-direction: column;
+}
+
+.mail-card-open td .utils-container {
+    flex-direction: column;
+    margin: 5;
+}
+
+.mail-card-open td .utils-container>* {
+    margin: 5px 0
+}
+
+.mail-card-open td .header-container {
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
 
-.mail-card-open td {
 
+.mail-card-open td {
     justify-content: start;
 }
 
-.mail-card-open .header {
+.mail-card-open .header-container {
     display: flex;
     width: 100%;
 }
 
+.mail-card-open td .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .mail-card-open h2 {
+    display: flex;
+    align-items: center;
     margin: 0;
 }
 
@@ -78,5 +103,21 @@
 
     .mail-card-open div.utils-container {
         flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .mail-card-open td .utils-container>* {
+        margin: 0 10px;
+        padding: 5px;
+    }
+
+    .mails-container td div.utils-container>:not(:last-child) {
+        margin: 0 5px
+    }
+
+    .mails-container table .mail-card-open {
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 60px;
     }
 }

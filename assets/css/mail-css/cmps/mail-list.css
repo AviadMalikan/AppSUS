@@ -34,15 +34,6 @@
     background-color: var(--read-mail);
 }
 
-.mails-container table .mail-card-open {
-    border-radius: 2px;
-    align-items: flex-start;
-    height: flex;
-    background-color: var(--read-mail);
-    display: block;
-    padding: 20px 40px;
-    flex-direction: column;
-}
 
 @media (min-width:940px) {
 
@@ -63,8 +54,5 @@
 
     }
 
-    .mails-container table .mail-card-open {
-        flex-direction: column;
-        width: 100%;
-    }
+
 }

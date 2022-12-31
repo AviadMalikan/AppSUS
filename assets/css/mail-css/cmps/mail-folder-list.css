@@ -13,28 +13,29 @@
     flex: 1;
 }
 
-.mail-folders-containers button {
+.mail-folders-containers a {
     padding: 10px;
     margin: 5px 0;
     width: 80%;
     border-radius: 3px;
     background-color: var(--read-mail);
     outline: 1px var(--read-mail) solid;
+    transition: .5s;
 }
 
-.mail-folders-containers button:hover {
+.mail-folders-containers a:hover {
     background-color: var(--main-bg-color);
     outline: 5px var(--read-mail) solid;
     box-shadow: 0 0 0 0;
     width: 90%;
 }
 
-.mail-folders-containers button:active {
+/* .mail-folders-containers a {
     background-color: var(--main-bg-color);
     outline: 5px var(--read-mail) solid;
     box-shadow: 0 0 0 0;
     width: 90%;
-}
+} */
 
 
 @media (min-width:940px) {
@@ -43,7 +44,7 @@
         margin-inline-end: 0px;
     }
 
-    .mail-folders-containers button {
+    .mail-folders-containers a {
         padding: 10px;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;

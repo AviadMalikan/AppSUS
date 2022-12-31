@@ -1,4 +1,4 @@
-
+const { Route, NavLink } = ReactRouterDOM
 
 export function MailFolderList({ onSetFilter }) {
 
@@ -25,15 +25,19 @@ export function MailFolderList({ onSetFilter }) {
     }
 
     return <section className="mail-folders-containers">
-
-        <button onClick={() => onChangeFilter('inbox')}
-            className="fa fa-inbox"></button>
-        <button onClick={() => onChangeFilter('all')}
-            className="">All</button>
-        <button onClick={() => onChangeFilter('sent')}
-            className="fa fa-send"></button>
-        <button onClick={() => onChangeFilter('favorite')}
-            className="fa fa-favorite"></button>
+        
+        <NavLink to="/mail" >
+            <span onClick={() => onChangeFilter('inbox')}
+                className="fa fa-inbox"></span>
+        </NavLink>
+        <NavLink to="/mail" >
+            <span onClick={() => onChangeFilter('sent')}
+                className="fa fa-send"></span>
+        </NavLink>
+        <NavLink to="/mail" >
+            <span onClick={() => onChangeFilter('favorite')}
+                className="fa fa-favorite"></span>
+        </NavLink>
 
     </section>
 }

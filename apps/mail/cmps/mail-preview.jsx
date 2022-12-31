@@ -37,49 +37,42 @@ export function MailPreview({ mail, onRemoveMail, onIsRead }) {
             <td className="sub-title hover" onClick={onTextShown}>
                 <LongTxt txt={mail.body} userLength={getLength()} />
             </td>
-            <td>
+            <td className="utils-td">
+                <span className="time">{getTime(mail.sentAt)}</span>
                 <div className="utils-container">
 
-                    <span className="time">{getTime(mail.sentAt)}</span>
 
                     <span onClick={() => onIsRead(mail.id)}
                         className={`hover fa ${mail.isRead ? 'fa-seen' : 'fa-unseen'}`}></span>
 
-                    <span className="hover fa fa-favorite">fav</span>
+                    <span className="hover fa fa-favorite"></span>
 
-                    <span className=""><Link to={`/mail/${mail.id}`}>open</Link></span>
+                    <span className="">
+                        <Link to={`/mail/${mail.id}`}><span className="hover fa fa-open-window"/></Link>
+                    </span>
 
                     <span onClick={() => onRemoveMail(mail.id)} className="hover fa fa-trash"></span>
 
                 </div>
             </td>
 
-            {/* <td className="time">{getTime(mail.sentAt)} </td>
-            <td onClick={() => { }}>
-                <span onClick={() => onIsRead(mail.id)}
-                    className={`hover fa ${mail.isRead ? 'fa-seen' : 'fa-unseen'}`}></span>
-            </td>
-            <td>
-                <Link to={`/mail/${mail.id}`}>open</Link>
-            </td>
-            <td >
-                <span onClick={() => onRemoveMail(mail.id)} className="hover fa fa-trash"></span>
-            </td> */}
-
         </tr>}
 
         {isTextShown && <tr className="mail-card-open" >
             <td className="header">
-                <div className="header">
-                    <h2 onClick={onTextShown} className="hover"> {mail.subject}</h2>
+                <div className="header-container">
+                    <div className="header">
+                        <h2 onClick={onTextShown} className="hover"> {mail.subject}</h2>
+                        <td><h5>{`< from ${mail.from} >`}</h5></td>
+                    </div>
                     <div className="utils-container">
 
+                        <span className="hover fa fa-favorite"></span>
+                        <Link to={`/mail/${mail.id}`}><span className="hover fa fa-open-window"></span></Link>
                         <span onClick={() => onRemoveMail(mail.id)} className="hover fa fa-trash"></span>
-                        <Link to={`/mail/${mail.id}`}><span className="hover fa fa-open-window"> open </span></Link>
                     </div>
                 </div>
             </td>
-            <td><h5>{`< from ${mail.from} >`}</h5></td>
             <td><h3 >{mail.body}</h3></td>
         </tr>}
 
