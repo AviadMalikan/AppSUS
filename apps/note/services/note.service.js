@@ -118,33 +118,9 @@ function _createNotes() {
     if (!notes || !notes.length) {
         notes = [
             {
-                id: "n101",
-                type: "note-txt",
-                isPinned: false,
-                info: {
-                    txt: "Fullstack Me Baby!"
-                },
-                style: {
-                
-                }
-            },
-            {
-                id: "n103",
-                type: "note-todos",
-                isPinned: false,
-                info: {
-                    lable: "Get my stuff together", todos: [
-                        { txt: "Driving liscence", doneAt: null },
-                        { txt: "Coding power", doneAt: 187111111 }]
-                },
-                style: {
-                    backgroundColor: "#cbc0d3"
-                }
-            },
-            {
                 id: "n102",
                 type: "note-img",
-                isPinned: true,
+                isPinned: false,
                 info: {
                     url: "https://miro.medium.com/max/1400/1*wygpuRlFHFxNtihw9WQv7Q.png",
                     title: "Life"
@@ -154,15 +130,16 @@ function _createNotes() {
                 }
             },
             {
-                id: "n111",
-                type: "note-txt",
+                id: "n103",
+                type: "note-todos",
                 isPinned: false,
                 info: {
-                    txt: `“The rare people who do become truly exceptional at something do so not because they believe they're exceptional. On the contrary, they become amazing because they're obsessed with improvement. And that obsession with improvement stems from an unerring belief that they are, in fact, not that great at all.”
-                    ― Mark Manson. “The Subtle Art of Not Giving a F*ck“.`
+                    lable: "Get my stuff together", todos: [
+                        { txt: "Driving liscence", isDone: true },
+                        { txt: "Coding power", isDone: false }]
                 },
                 style: {
-                backgroundColor: "#e76f51"
+                    backgroundColor: "#cbc0d3"
                 }
             },
             {
@@ -171,9 +148,9 @@ function _createNotes() {
                 isPinned: true,
                 info: {
                     lable: "DONT FORGET", todos: [
-                        { txt: "Visit Grandma", doneAt: null },
-                        { txt: "Shop groceries", doneAt: 187111111 },
-                        { txt: "Fold laundry", doneAt: 187111111 }]
+                        { txt: "Visit Grandma", isDone: false },
+                        { txt: "Shop groceries", isDone: true },
+                        { txt: "Fold laundry", isDone: false }]
                 },
                 style: {
                     backgroundColor: "#2a9d8f"
@@ -190,6 +167,18 @@ function _createNotes() {
                 },
                 style: {
                
+                }
+            },
+            {
+                id: "n111",
+                type: "note-txt",
+                isPinned: false,
+                info: {
+                    txt: `“Whether we like it or not, we are always taking an active role in what’s occurring to and within us. We are always interpreting the meaning of every moment and every occurrence. We are always choosing the values by which we live and the metrics by which we measure everything that happens to us. Often the same event can be good or bad depending on the metric we choose to use”
+                    ― Mark Manson. “The Subtle Art of Not Giving a F*ck“.`
+                },
+                style: {
+                backgroundColor: "#e76f51"
                 }
             },
             {
@@ -214,7 +203,30 @@ function _createNotes() {
                 style: {
                     backgroundColor: "#fcbf49"
                 }
-            }
+            },
+            {
+                id: "n101",
+                type: "note-txt",
+                isPinned: false,
+                info: {
+                    txt: "Fullstack Me Baby!"
+                },
+                style: {
+                    backgroundColor: "#86bbd8"
+                }
+            },
+            {
+                id: "n112",
+                type: "note-img",
+                isPinned: true,
+                info: {
+                    url: "../img/miley.jpg",
+                    title: "My Shih-tzu Miley"
+                },
+                style: {
+                    backgroundColor: "#cfe1b9"
+                }
+            },
         ]
     }
 

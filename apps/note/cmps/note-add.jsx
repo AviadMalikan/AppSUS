@@ -18,9 +18,9 @@ export function NoteAdd({ onSaveNote }) {
     function getPlaceholder() {
         const { type } = newNote
         if (type === 'note-txt') return 'Enter text'
-        else if (type === 'note-img') return 'Enter image url'
-        else if (type === 'note-vid') return 'Enter video url'
-        else if (type === 'note-todos') return 'eneter tototoddos'
+        else if (type === 'note-img') return 'Enter image URL'
+        else if (type === 'note-vid') return 'Enter video URL'
+        else if (type === 'note-todos') return 'Enter comma separated list'
     }
 
     function getInputName() {

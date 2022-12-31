@@ -37,13 +37,13 @@
 @media (max-width: 720px) {   
     .home {
         flex-direction: column;
-        align-items: flex-end;
+        align-items: flex-start;
         margin-top: 50px;
     }
 
     .home .apps {
         flex-direction: row;
-        width: 500px;
+        width: 350px;
         margin-top: 90px;
     }
 
@@ -52,8 +52,8 @@
     }
 
     .home .main-logo-img {
-        height: 300px;
-        width: 500px;
+        height: 210px;
+        width: 350px;
         transition: .5s;
     }
 }

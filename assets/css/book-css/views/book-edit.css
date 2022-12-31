@@ -1,0 +1,28 @@
+.book-edit {
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    width: 330px;
+    height: 40vh;
+    margin: 50px auto; 
+    padding: 10px;
+}
+
+.book-edit form {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-edit form input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(154, 154, 154, 0.55);
+    width: 300px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.book-edit .btns {
+    margin: 0 auto;
+}

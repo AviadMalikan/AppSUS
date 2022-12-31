@@ -74,6 +74,12 @@
     right: 72px;
 }
 
+.note .send-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 95px;
+}
+
 .note .color-input {
     width: 0px;
     opacity: 0;
@@ -97,6 +103,10 @@
 
 .fa.pin-btn::before {
     content: "\f08d";
+}
+
+.fa.send-btn::before {
+    content: "\f1d8";
 }
 
 @media (min-width: 1160px) {
