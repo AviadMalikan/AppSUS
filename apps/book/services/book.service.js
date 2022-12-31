@@ -103,7 +103,7 @@ function getEmptyBook(title = '', price = '') {
       "Computers",
       "Hack"
     ],
-    thumbnail: "./assets/img/book-cover.png",
+    thumbnail: "../img/book-cover.png",
     language: "en",
     listPrice: {
       amount: price,
