@@ -19,7 +19,7 @@ export function NoteEdit({note, onRemoveNote, onDuplicateNote, onPinNote, onChan
         <button title="Delete" className="fa remove-btn btn" onClick={() => onRemoveNote(note.id)}></button>
         <button title="Duplicate" className="fa duplicate-btn btn" onClick={() => onDuplicateNote(note)} ></button>
         <button title="Pin" className="fa pin-btn btn" onClick={() => onPinNote(note)} ></button>
-        <button title="Send" className="fa send-btn btn" onClick={() => onSendNoteAsEmail(note)} ></button>
+        {/* <button title="Send" className="fa send-btn btn" onClick={() => onSendNoteAsEmail(note)} ></button> */}
 
     </section>
 }
